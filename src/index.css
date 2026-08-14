@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #0090d4; /* 60% Blue */
+  --color-brand-amber: #f59e0b;
+  --color-brand-obsidian: #000000; /* 10% Black */
+  --color-brand-navy: #000000; /* 10% Black for text */
+  --color-bg-base: #f9fafb; /* 30% Calm White */
+  --color-bg-glass: rgba(249, 250, 251, 0.95);
+  --color-bg-glass-hover: #ffffff;
+  --color-border-glow: rgba(0, 144, 212, 0.3);
+  
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Syne', sans-serif;
+}
+
+body {
+  color: #334155;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-brand-obsidian);
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background-color: var(--color-bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 24px -1px rgba(0,0,0,0.02);
+}
+
+.glass-panel:hover {
+  border-color: var(--color-border-glow);
+  background-color: var(--color-bg-glass-hover);
+  box-shadow: 0 10px 40px -2px rgba(14,165,233,0.08);
+}
+
+/* Lenis Scroll Smooth */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
