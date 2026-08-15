@@ -31,10 +31,10 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-[1.1] mb-4 max-w-sm md:max-w-md lg:max-w-lg" style={{ color: '#0090d4' }}>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-[1.1] mb-3 max-w-xs md:max-w-sm" style={{ color: '#0090d4' }}>
             Restore Your<br/>Mobility.
           </h1>
-          <p className="text-2xl md:text-3xl text-brand-obsidian font-medium mb-6 max-w-xs md:max-w-sm">
+          <p className="text-xl md:text-2xl text-brand-obsidian font-medium mb-6 max-w-xs">
             Personalized care for a <br/> pain-free life.
           </p>
           
