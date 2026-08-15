@@ -5,7 +5,7 @@ export default function Hero() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen flex flex-col justify-center md:justify-end pb-8 md:pb-16 px-8 overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 px-8 overflow-hidden">
       
       {/* Background Image with Light Mask */}
       <div className="absolute inset-0 z-0">
@@ -31,18 +31,18 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          {/* Hero text hidden per user request */}
-          {/* <h1 className="text-5xl md:text-7xl xl:text-8xl font-black text-brand-obsidian tracking-tighter uppercase leading-[1.1]">
-            BeachHealth <br/>
-            Toronto's Lower Body <br/>
-            Movement Clinic
-          </h1> */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-brand-green tracking-tighter uppercase leading-[1.0] mb-4">
+            Restore Your <br/> Mobility.
+          </h1>
+          <p className="text-2xl md:text-3xl text-brand-obsidian font-medium mb-8">
+            Personalized care for a <br/> pain-free life.
+          </p>
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8"
+            className="mt-2 md:mt-4"
           >
             <motion.button 
               whileHover={{ scale: 1.05 }}
