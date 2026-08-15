@@ -9,12 +9,15 @@ export default function Hero() {
       
       {/* Background Image with Light Mask */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/hero-new.jpg"
-          alt="Rehab Background"
-          className="w-full h-full object-cover object-center"
-          style={{ filter: "grayscale(20%)" }} // Slight desaturation
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet="/hero-new.jpg" />
+          <img 
+            src="/hero-mobile.jpg"
+            alt="Rehab Background"
+            className="w-full h-full object-cover object-bottom md:object-center"
+            style={{ filter: "grayscale(20%)" }} // Slight desaturation
+          />
+        </picture>
         {/* Very subtle mask, no blur, gradient removed as requested */}
         <div className="absolute inset-0 bg-black/10"></div>
       </div>
