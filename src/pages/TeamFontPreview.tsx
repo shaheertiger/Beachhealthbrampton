@@ -19,9 +19,14 @@ export default function TeamFontPreview() {
 
   return (
     <div 
-      className="min-h-screen bg-bg-base transition-all duration-300 relative flex flex-col" 
+      className="min-h-screen bg-bg-base transition-all duration-300 relative flex flex-col font-preview-container" 
     >
-      
+      <style>{`
+        .font-preview-container * {
+          font-family: ${selectedFont.family} !important;
+        }
+      `}</style>
+
       {/* Font Switcher Panel - Fixed at top */}
       <div className="pt-28 pb-6 px-4 border-b border-slate-200 bg-white shadow-sm z-50 sticky top-0">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
