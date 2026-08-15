@@ -55,9 +55,6 @@ export default function Hero() {
         </motion.div>
 
       </div>
-
-      {/* Smooth blend into the background color below */}
-      <div className="absolute bottom-0 left-0 w-full h-48 md:h-64 bg-gradient-to-t from-bg-base via-bg-base/80 to-transparent z-10 pointer-events-none"></div>
     </section>
   );
 }
