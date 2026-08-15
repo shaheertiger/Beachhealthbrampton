@@ -12,11 +12,11 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="uppercase tracking-widest text-brand-cyan font-bold text-xs block mb-3">
+          <span className="uppercase tracking-widest text-brand-green font-bold text-xs block mb-3">
             Connect With Us
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-obsidian mb-5 leading-tight tracking-tight">
-            Initiate <span className="text-brand-cyan">Recovery.</span>
+            Initiate <span className="text-brand-green">Recovery.</span>
           </h1>
           <p className="text-slate-500 max-w-xl mx-auto text-base font-light leading-relaxed">
             Ready to start your journey? Reach out to our Brampton clinic to book a comprehensive biomechanical assessment.
@@ -42,7 +42,7 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="John Doe"
-                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-cyan text-brand-obsidian placeholder:text-slate-400 text-sm"
+                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -50,7 +50,7 @@ export default function Contact() {
               <input
                 type="email"
                 placeholder="john@example.com"
-                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-cyan text-brand-obsidian placeholder:text-slate-400 text-sm"
+                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -58,12 +58,12 @@ export default function Contact() {
               <textarea
                 rows={4}
                 placeholder="How can we help you?"
-                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-cyan text-brand-obsidian placeholder:text-slate-400 text-sm resize-none"
+                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm resize-none"
               />
             </div>
             <button
               type="button"
-              className="bg-brand-obsidian text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-brand-cyan transition-colors"
+              className="bg-brand-obsidian text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-brand-green transition-colors"
             >
               Transmit Message
             </button>
@@ -88,7 +88,7 @@ export default function Contact() {
             ].map(({ Icon, label, value }) => (
               <div key={label} className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
-                  <Icon size={18} className="text-brand-cyan" />
+                  <Icon size={18} className="text-brand-green" />
                 </div>
                 <div>
                   <p className="font-bold text-sm text-brand-obsidian">{label}</p>

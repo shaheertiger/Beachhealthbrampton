@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* Coded Logo */}
         <Link to="/" className="flex items-center group select-none">
           <span
-            className="font-display font-black uppercase tracking-tight leading-none text-brand-cyan"
+            className="font-display font-black uppercase tracking-tight leading-none text-brand-green"
             style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}
           >
             BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
@@ -65,14 +65,14 @@ export default function Navbar() {
             >
               {item.name}
               {isActive(item.path) && (
-                <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand-cyan" />
+                <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand-green" />
               )}
             </Link>
           ))}
         </div>
 
         <motion.div className="flex items-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link to="/contact" className="bg-brand-cyan text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-brand-cyan/20 transition-all hidden md:flex items-center justify-center">
+          <Link to="/contact" className="bg-brand-green text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-brand-green/20 transition-all hidden md:flex items-center justify-center">
             Book An Appointment
           </Link>
         </motion.div>
@@ -98,7 +98,7 @@ export default function Navbar() {
             {/* Mobile Menu Header (Matches Navbar) */}
             <div className="flex justify-between items-center px-8 py-6 border-b border-white/10">
               <Link to="/" className="flex items-center group select-none" onClick={() => setIsMobileMenuOpen(false)}>
-                <span className="font-display font-black uppercase tracking-tight leading-none text-brand-cyan" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
+                <span className="font-display font-black uppercase tracking-tight leading-none text-brand-green" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
                   BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
                 </span>
               </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
                   to={item.path}
                   className={twMerge(
                     "text-2xl font-bold tracking-widest uppercase transition-colors drop-shadow-sm",
-                    isActive(item.path) ? "text-brand-cyan" : "text-brand-obsidian hover:text-brand-cyan"
+                    isActive(item.path) ? "text-brand-green" : "text-brand-obsidian hover:text-brand-green"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -126,7 +126,7 @@ export default function Navbar() {
               <Link 
                 to="/contact" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-brand-cyan text-white px-8 py-4 rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-brand-cyan/30 text-lg w-full max-w-[280px]"
+                className="bg-brand-green text-white px-8 py-4 rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-brand-green/30 text-lg w-full max-w-[280px]"
               >
                 Book An Appointment
               </Link>

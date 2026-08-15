@@ -9,7 +9,7 @@ export default function Therapies() {
   return (
     <div className="pt-32 md:pt-40 pb-20 md:pb-32 px-8 min-h-screen bg-bg-base relative overflow-hidden">
       {/* Ambient background blur */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-cyan/20 rounded-full blur-[150px] mix-blend-multiply pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/20 rounded-full blur-[150px] mix-blend-multiply pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 

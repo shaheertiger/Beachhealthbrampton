@@ -12,11 +12,11 @@ export default function AboutUs() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="uppercase tracking-widest text-brand-cyan font-bold text-xs block mb-3">
+          <span className="uppercase tracking-widest text-brand-green font-bold text-xs block mb-3">
             Our Identity
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-obsidian mb-5 leading-tight tracking-tight">
-            Dedicated to <span className="text-brand-cyan">Recovery.</span>
+            Dedicated to <span className="text-brand-green">Recovery.</span>
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-base font-light leading-relaxed">
             At BeachHealth Brampton, we believe that movement is medicine. Our clinic was founded on the principle that everyone deserves to live a life free of pain and physical limitations.

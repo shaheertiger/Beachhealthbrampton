@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Center Column: Logo & Newsletter */}
         <div className="flex flex-col items-center text-center gap-6">
           <Link to="/" className="flex items-center justify-center group select-none">
-            <span className="font-display font-black uppercase tracking-tight leading-none text-brand-cyan" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
+            <span className="font-display font-black uppercase tracking-tight leading-none text-brand-green" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
               BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
             </span>
           </Link>

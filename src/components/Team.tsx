@@ -47,7 +47,7 @@ export default function Team() {
               <h3 className="text-base font-bold text-brand-obsidian uppercase tracking-wide leading-tight mb-1">
                 {member.name}
               </h3>
-              <p className="text-brand-cyan text-xs font-semibold uppercase tracking-widest">
+              <p className="text-brand-green text-xs font-semibold uppercase tracking-widest">
                 {member.role}
               </p>
             </motion.div>
