@@ -3,69 +3,69 @@ import Team from '../components/Team';
 
 export default function AboutUs() {
   return (
-    <div className="pt-32 md:pt-40 pb-12 bg-bg-base min-h-screen relative overflow-hidden">
-      {/* Ambient background blur */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-green/20 rounded-full blur-[150px] mix-blend-multiply pointer-events-none"></div>
+    <div className="pt-28 pb-0 bg-bg-base min-h-screen">
 
-      <div className="max-w-7xl mx-auto px-8 mb-32 relative z-10">
-        <motion.div 
+      {/* Page Header */}
+      <div className="w-full max-w-4xl mx-auto px-4 text-center mb-12">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring" }}
-          className="text-center mb-20"
+          transition={{ duration: 0.6 }}
         >
-          <span className="uppercase tracking-widest text-brand-amber font-bold text-sm block mb-4">Our Identity</span>
-          <h1 className="text-3xl md:text-4xl lg:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight break-words break-all sm:break-normal">
-            Dedicated to <span className="text-brand-green">Recovery.</span>
+          <span className="uppercase tracking-widest text-brand-cyan font-bold text-xs block mb-3">
+            Our Identity
+          </span>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-obsidian mb-5 leading-tight tracking-tight">
+            Dedicated to <span className="text-brand-cyan">Recovery.</span>
           </h1>
-          <p className="text-slate-500 max-w-3xl mx-auto text-lg font-light leading-relaxed">
-            At BeachHealth Brampton, we believe that movement is medicine. Our clinic was founded on the principle that everyone deserves to live a life free of pain and physical limitations. Our multidisciplinary team collaborates to provide comprehensive care tailored to your unique biomechanics.
+          <p className="text-slate-500 max-w-2xl mx-auto text-base font-light leading-relaxed">
+            At BeachHealth Brampton, we believe that movement is medicine. Our clinic was founded on the principle that everyone deserves to live a life free of pain and physical limitations.
           </p>
         </motion.div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
-            className="relative h-[400px] md:h-[600px] w-full"
-          >
-            <div className="absolute inset-0 bg-brand-green/5 mix-blend-overlay z-10 pointer-events-none rounded-[3rem]"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" 
-              alt="Clinic facility"
-              className="rounded-[3rem] border border-slate-200 object-cover h-full w-full filter grayscale hover:grayscale-0 transition-all duration-700 shadow-xl shadow-slate-200/50 opacity-90"
-            />
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.8, type: "spring" }}
-            className="flex flex-col gap-6"
-          >
-            <div className="glass-panel p-10 rounded-[2.5rem] border border-slate-200 relative overflow-hidden group shadow-sm">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 via-brand-green/10 to-brand-green/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-3 text-brand-obsidian break-words hyphens-auto">15+ Years of Mastery</h3>
-              <p className="text-slate-500 font-light leading-relaxed text-lg">Our extensive experience means we've seen it all and helped thousands of patients return to their peak performance.</p>
-            </div>
-            <div className="glass-panel p-10 rounded-[2.5rem] border border-slate-200 relative overflow-hidden group shadow-sm">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 via-brand-green/10 to-brand-green/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-3 text-brand-obsidian break-words hyphens-auto">Elite Practitioners</h3>
-              <p className="text-slate-500 font-light leading-relaxed text-lg">All our therapists are fully trained, licensed, and dedicated to the highest standards of care. We constantly update our methods.</p>
-            </div>
-            <div className="glass-panel p-10 rounded-[2.5rem] border border-slate-200 relative overflow-hidden group shadow-sm">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 via-brand-green/10 to-brand-green/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-3 text-brand-obsidian break-words hyphens-auto">Bespoke Architecture</h3>
-              <p className="text-slate-500 font-light leading-relaxed text-lg">We don't do cookie-cutter solutions. Your recovery plan is meticulously engineered for your physiology and goals.</p>
-            </div>
-          </motion.div>
+      {/* Clinic Image */}
+      <div className="w-full max-w-4xl mx-auto px-4 mb-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="w-full h-56 sm:h-72 md:h-96 rounded-3xl overflow-hidden border border-slate-200 shadow-lg"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
+            alt="Clinic facility"
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          />
+        </motion.div>
+      </div>
+
+      {/* Stat Cards */}
+      <div className="w-full max-w-4xl mx-auto px-4 mb-12">
+        <div className="flex flex-col gap-4">
+          {[
+            { title: '15+ Years of Mastery', body: "Our extensive experience means we've seen it all and helped thousands of patients return to peak performance." },
+            { title: 'Elite Practitioners', body: 'All our therapists are fully trained, licensed, and dedicated to the highest standards of care.' },
+            { title: 'Bespoke Architecture', body: "We don't do cookie-cutter solutions. Your recovery plan is engineered for your physiology and goals." },
+          ].map((card, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * i + 0.3, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm"
+            >
+              <h3 className="font-bold text-lg text-brand-obsidian uppercase tracking-wide mb-2">
+                {card.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">{card.body}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
-      
-      {/* Reusing the existing Team section here */}
-      <div className="relative z-10 border-t-0">
-        <Team />
-      </div>
+
+      {/* Team Section */}
+      <Team />
     </div>
   );
 }

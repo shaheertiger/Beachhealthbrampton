@@ -43,13 +43,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         
-        {/* Coded Logo - no image dependency */}
+        {/* Coded Logo */}
         <Link to="/" className="flex items-center group select-none">
           <span
-            className="font-display font-black uppercase tracking-tight leading-none"
-            style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}
+            className="font-display font-black uppercase tracking-tight leading-none text-brand-cyan"
+            style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}
           >
-            <span className="text-brand-obsidian">BEAC</span><span className="text-brand-cyan" style={{ fontWeight: 900 }}>+</span><span className="text-brand-obsidian">EALTH</span>
+            BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
           </span>
         </Link>
         
