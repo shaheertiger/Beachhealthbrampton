@@ -29,12 +29,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         
-        {/* Logo matching the reference vibe, adjusted vertically to account for image padding */}
-        <Link to="/" className="flex items-center group -translate-y-1 md:-translate-y-3">
+        {/* Logo matching the reference vibe, aggressively adjusted to ignore its transparent padding */}
+        <Link to="/" className="flex items-center group -mt-2 md:-mt-6">
           <img src="/logo.png" alt="BeachHealth Logo" className="h-16 md:h-24 object-contain" />
         </Link>
         
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 md:translate-y-1">
           {[
             { name: 'Home', path: '/' },
             { name: 'Our Services', path: '/therapies' },
@@ -57,8 +57,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link to="/contact" className="bg-brand-green text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-brand-green/20 transition-all hidden md:inline-block">
+        <motion.div className="flex items-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link to="/contact" className="bg-brand-green text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-brand-green/20 transition-all hidden md:flex items-center justify-center">
             Book An Appointment
           </Link>
         </motion.div>
