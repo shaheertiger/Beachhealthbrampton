@@ -5,7 +5,7 @@ export default function Hero() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[100svh] flex flex-col justify-start md:justify-end pt-32 md:pt-0 pb-12 md:pb-24 px-6 md:px-8 overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-[100svh] flex flex-col pt-32 md:pt-0 pb-12 md:pb-24 px-6 md:px-8 overflow-hidden">
       
       {/* Background Image with Light Mask */}
       <div className="absolute inset-0 z-0">
@@ -22,9 +22,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col flex-grow justify-between md:justify-end">
         
-        {/* Main Content */}
+        {/* Text Block */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,23 +37,24 @@ export default function Hero() {
           <p className="text-xl md:text-2xl text-brand-obsidian font-medium mb-6 max-w-xs">
             Personalized care for a <br/> pain-free life.
           </p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-2 md:mt-4 lg:mt-6"
-          >
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50"
-            >
-              Book An Appointment
-            </motion.button>
-          </motion.div>
         </motion.div>
 
+        {/* Button Block */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full md:w-auto self-start mt-auto md:mt-4 lg:mt-6 flex justify-center md:justify-start"
+        >
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50 w-full md:w-auto"
+          >
+            Book An Appointment
+          </motion.button>
+        </motion.div>
+        
       </div>
     </section>
   );
