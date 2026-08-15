@@ -29,8 +29,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         
-        {/* Logo matching the reference vibe */}
-        <Link to="/" className="flex items-center group">
+        {/* Logo matching the reference vibe, adjusted vertically to account for image padding */}
+        <Link to="/" className="flex items-center group -translate-y-1 md:-translate-y-3">
           <img src="/logo.png" alt="BeachHealth Logo" className="h-16 md:h-24 object-contain" />
         </Link>
         
