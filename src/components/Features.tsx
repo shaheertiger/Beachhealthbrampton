@@ -1,72 +1,92 @@
 import { motion } from 'framer-motion';
-import { Bone, HeartPulse, ArrowRight } from 'lucide-react';
+import { twMerge } from 'tailwind-merge';
 
-const services = [
-  { 
-    icon: <HeartPulse size={40} className="text-brand-cyan" />, 
-    title: 'Physiotherapy', 
-    desc: 'Evidence-based practice dedicated to restoring optimal movement and functional capacity. We analyze the kinetic chain to fix the root cause, not just the symptom.',
-    colSpan: 'md:col-span-2'
+const features = [
+  {
+    title: "Reframe Your Wellbeing",
+    description: "We're here to support and empower you on your path to recovery or improvement, ensuring that your treatment plan is as individual as you are.",
+    image: "/physio-2.jpg",
+    reversed: false,
+    imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl"
   },
-  { 
-    icon: <Bone size={40} className="text-brand-amber" />, 
-    title: 'Chiropractic', 
-    desc: 'Helps restore movement where the body has become tight, guarded, stiff, or stuck. Precision alignments engineered for longevity.',
-    colSpan: 'md:col-span-2'
+  {
+    title: "Reframe Your Pain",
+    description: "Pain can get in the way of life, that's why we offer full body treatments with expert guidance to achieve lasting relief and improved quality of life.",
+    image: "/chiro-1.jpg",
+    reversed: true,
+    imageStyle: "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-xl rounded-bl-xl"
   },
+  {
+    title: "Reframe Your Movement",
+    description: "Unlock the potential for a life in full motion with personalized assessment and treatment plans to optimize function and performance.",
+    image: "/chiro-2.jpg",
+    reversed: false,
+    imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl"
+  }
 ];
 
 export default function Features() {
   return (
-    <section className="py-32 px-8 bg-bg-base relative z-10 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-8 relative overflow-hidden bg-bg-base text-slate-600">
+      <div className="max-w-6xl mx-auto flex flex-col gap-32">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div>
-            <span className="text-brand-cyan font-bold tracking-widest text-xs uppercase mb-3 block">Disciplines</span>
-            <h2 className="text-4xl md:text-5xl font-black text-brand-navy max-w-lg leading-tight">
-              Clinical mastery for <br/> <span className="text-slate-400">elite recovery.</span>
-            </h2>
-          </div>
-          <p className="text-slate-500 max-w-md text-lg font-light">
-            Our personalized treatments address the root cause of your pain, providing long-lasting relief and optimized biomechanics.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {services.map((item, index) => (
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            className={twMerge(
+              "flex flex-col lg:flex-row items-center gap-16",
+              feature.reversed ? "lg:flex-row-reverse" : ""
+            )}
+          >
+            {/* Image Column */}
             <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: feature.reversed ? 40 : -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: index * 0.15, duration: 0.8, type: "spring", bounce: 0.2 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className={`glass-panel p-10 rounded-[2rem] flex flex-col justify-between gap-12 group cursor-pointer ${item.colSpan}`}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full lg:w-1/2"
             >
-              <div className="flex justify-between items-start">
-                <div className="p-4 bg-slate-100 rounded-2xl border border-slate-200 group-hover:bg-white transition-colors shadow-sm">
-                  {item.icon}
+              <div className="relative aspect-square md:aspect-[4/3] w-full p-4">
+                {/* Asymmetric border radius masking */}
+                <div className={twMerge("w-full h-full overflow-hidden shadow-xl border border-slate-100 bg-white", feature.imageStyle)}>
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover object-center opacity-90 hover:opacity-100 transition-opacity duration-500"
+                  />
                 </div>
-                <motion.div 
-                  initial={{ rotate: -45, opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  className="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-400 shadow-sm group-hover:bg-brand-navy group-hover:text-white group-hover:border-brand-navy transition-all duration-300"
-                >
-                  <ArrowRight size={18} className="group-hover:rotate-45 transition-transform duration-300" />
-                </motion.div>
-              </div>
-              
-              <div>
-                <h3 className="text-3xl font-display font-bold text-brand-navy mb-4">{item.title}</h3>
-                <p className="text-lg text-slate-500 font-light leading-relaxed">
-                  {item.desc}
-                </p>
+                {/* Decorative subtle border glow matching the shape */}
+                <div className={twMerge("absolute inset-0 border border-brand-green/30 pointer-events-none -z-10 translate-x-4 translate-y-4", feature.imageStyle)}></div>
               </div>
             </motion.div>
-          ))}
-        </div>
 
+            {/* Text Column */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="w-full lg:w-1/2 flex flex-col gap-6"
+            >
+              {/* Green Divider Line */}
+              <div className="w-16 h-1 bg-brand-green mb-2"></div>
+              
+              <h2 className="text-4xl md:text-5xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight">
+                {feature.title.split(' ').map((word, i) => (
+                  <span key={i} className={word === "Your" ? "text-brand-green block my-1" : "block"}>
+                    {word}
+                  </span>
+                ))}
+              </h2>
+              
+              <p className="text-lg leading-relaxed text-slate-500 font-light max-w-lg mt-4">
+                {feature.description}
+              </p>
+              
+            </motion.div>
+          </div>
+        ))}
+        
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Therapies from './pages/Therapies';
 import AboutUs from './pages/AboutUs';
@@ -40,13 +41,17 @@ function App() {
 
   return (
     <Router>
-      <main className="min-h-screen bg-bg-base font-sans relative overflow-x-hidden selection:bg-brand-cyan selection:text-white">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/therapies" element={<Therapies />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <main className="min-h-screen bg-bg-base font-sans relative overflow-x-hidden selection:bg-brand-green selection:text-white flex flex-col">
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/therapies" element={<Therapies />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
       </main>
     </Router>
   );

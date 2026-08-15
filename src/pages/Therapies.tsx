@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { Bone, HeartPulse } from 'lucide-react';
 
 const services = [
-  { icon: <HeartPulse size={40} className="text-brand-cyan" />, title: 'Physiotherapy', desc: 'Evidence-based practice dedicated to restoring optimal movement and functional capacity. We analyze the kinetic chain to fix the root cause, not just the symptom.' },
-  { icon: <Bone size={40} className="text-brand-amber" />, title: 'Chiropractic', desc: 'Helps restore movement where the body has become tight, guarded, stiff, or stuck. Precision alignments engineered for longevity.' },
+  { image: '/physio-2.jpg', title: 'Physiotherapy', desc: 'Evidence-based practice dedicated to restoring optimal movement and functional capacity. We analyze the kinetic chain to fix the root cause, not just the symptom.' },
+  { image: '/chiro-1.jpg', title: 'Chiropractic', desc: 'Helps restore movement where the body has become tight, guarded, stiff, or stuck. Precision alignments engineered for longevity.' },
 ];
 
 export default function Therapies() {
@@ -19,9 +18,9 @@ export default function Therapies() {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-center mb-24"
         >
-          <span className="uppercase tracking-widest text-brand-cyan font-bold text-sm block mb-4">Our Expertise</span>
-          <h1 className="text-5xl md:text-7xl font-black text-brand-navy mt-4 mb-6 leading-tight tracking-tight">
-            Comprehensive <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-amber">Therapies.</span>
+          <span className="uppercase tracking-widest text-brand-green font-bold text-sm block mb-4">Our Expertise</span>
+          <h1 className="text-5xl md:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
+            Comprehensive <br/> <span className="text-brand-green">Therapies.</span>
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
             We offer a curated range of specialized clinical treatments to address your unique biomechanical needs, engineering a faster and more permanent recovery.
@@ -36,20 +35,25 @@ export default function Therapies() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15, duration: 0.8, type: "spring", bounce: 0.2 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="glass-panel p-12 rounded-[2.5rem] flex flex-col items-start gap-8 transition-all group border border-slate-200 shadow-sm"
+              className="bg-white rounded-[2.5rem] flex flex-col items-start transition-all group border border-slate-200 shadow-xl overflow-hidden"
             >
-              <div className="bg-slate-100 p-5 rounded-2xl group-hover:bg-brand-cyan group-hover:text-white transition-colors duration-300 border border-slate-200 group-hover:border-transparent">
-                {item.icon}
+              {/* Card Image Header */}
+              <div className="w-full h-72 overflow-hidden relative">
+                 <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-3xl font-display font-bold text-brand-navy mb-4">{item.title}</h3>
-                <p className="text-slate-500 font-light leading-relaxed text-lg">
-                  {item.desc}
-                </p>
+
+              {/* Card Content */}
+              <div className="p-10 flex flex-col flex-1 w-full gap-6">
+                <div className="flex-1">
+                  <h3 className="text-3xl font-display font-black text-brand-obsidian mb-4 uppercase tracking-tight">{item.title}</h3>
+                  <p className="text-slate-500 font-light leading-relaxed text-lg">
+                    {item.desc}
+                  </p>
+                </div>
+                <button className="mt-4 px-8 py-4 rounded-full border-2 border-slate-200 text-brand-obsidian font-bold uppercase tracking-wider hover:bg-brand-green hover:text-white hover:border-brand-green transition-colors w-full sm:w-auto text-sm">
+                  Book Session
+                </button>
               </div>
-              <button className="mt-4 px-8 py-4 rounded-full border border-slate-300 text-brand-navy font-medium hover:bg-brand-navy hover:text-white transition-colors w-full sm:w-auto">
-                Book Session
-              </button>
             </motion.div>
           ))}
         </div>
