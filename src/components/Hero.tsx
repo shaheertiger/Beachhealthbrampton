@@ -5,7 +5,7 @@ export default function Hero() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 px-8 overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-screen flex flex-col justify-end pb-12 md:pb-24 px-8 overflow-hidden">
       
       {/* Background Image with Light Mask */}
       <div className="absolute inset-0 z-0">
@@ -34,7 +34,7 @@ export default function Hero() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-[1.1] mb-4 max-w-sm md:max-w-md lg:max-w-lg" style={{ color: '#0090d4' }}>
             Restore Your<br/>Mobility.
           </h1>
-          <p className="text-2xl md:text-3xl text-brand-obsidian font-medium mb-8 max-w-xs md:max-w-sm">
+          <p className="text-2xl md:text-3xl text-brand-obsidian font-medium mb-6 max-w-xs md:max-w-sm">
             Personalized care for a <br/> pain-free life.
           </p>
           
@@ -42,7 +42,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 md:mt-16 lg:mt-28"
+            className="mt-2 md:mt-4 lg:mt-6"
           >
             <motion.button 
               whileHover={{ scale: 1.05 }}
