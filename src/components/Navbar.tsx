@@ -29,12 +29,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         
-        {/* Logo matching the reference vibe, aggressively adjusted to ignore its transparent padding */}
-        <Link to="/" className="flex items-center group -mt-2 md:-mt-6">
-          <img src="/logo.png" alt="BeachHealth Logo" className="h-16 md:h-24 object-contain" />
+        {/* Logo matching the reference vibe */}
+        <Link to="/" className="flex items-center group">
+          <img src="/logo.png" alt="BeachHealth Logo" className="h-16 md:h-20 object-contain" />
         </Link>
         
-        <div className="hidden md:flex items-center gap-8 md:translate-y-1">
+        <div className="hidden md:flex items-center gap-8">
           {[
             { name: 'Home', path: '/' },
             { name: 'Our Services', path: '/therapies' },
