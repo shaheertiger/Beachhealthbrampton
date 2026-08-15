@@ -65,14 +65,14 @@ export default function Navbar() {
             >
               {item.name}
               {isActive(item.path) && (
-                <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand-green" />
+                <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand-cyan" />
               )}
             </Link>
           ))}
         </div>
 
         <motion.div className="flex items-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link to="/contact" className="bg-brand-green text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-brand-green/20 transition-all hidden md:flex items-center justify-center">
+          <Link to="/contact" className="bg-brand-cyan text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-brand-cyan/20 transition-all hidden md:flex items-center justify-center">
             Book An Appointment
           </Link>
         </motion.div>
@@ -80,9 +80,9 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button 
           className="md:hidden text-brand-obsidian p-2 -mr-2 focus:outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => setIsMobileMenuOpen(true)}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu size={28} />
         </button>
       </div>
 
@@ -93,25 +93,40 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-bg-base/80 backdrop-blur-xl border-t border-white/20 z-40 overflow-y-auto"
+            className="md:hidden fixed inset-0 w-full h-[100dvh] bg-bg-base/95 backdrop-blur-2xl z-50 flex flex-col"
           >
-            <div className="flex flex-col items-center justify-center min-h-[70vh] px-8 py-12 gap-8">
+            {/* Mobile Menu Header (Matches Navbar) */}
+            <div className="flex justify-between items-center px-8 py-6 border-b border-white/10">
+              <Link to="/" className="flex items-center group select-none" onClick={() => setIsMobileMenuOpen(false)}>
+                <span className="font-display font-black uppercase tracking-tight leading-none text-brand-cyan" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
+                  BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
+                </span>
+              </Link>
+              <button className="text-brand-obsidian p-2 -mr-2 focus:outline-none" onClick={() => setIsMobileMenuOpen(false)}>
+                <X size={28} />
+              </button>
+            </div>
+
+            {/* Menu Links */}
+            <div className="flex flex-col items-center justify-center flex-1 px-8 pb-12 gap-8 overflow-y-auto">
               {navLinks.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   className={twMerge(
-                    "text-2xl font-bold tracking-widest uppercase transition-colors text-brand-obsidian drop-shadow-sm",
-                    isActive(item.path) ? "text-brand-green" : "hover:text-brand-green"
+                    "text-2xl font-bold tracking-widest uppercase transition-colors drop-shadow-sm",
+                    isActive(item.path) ? "text-brand-cyan" : "text-brand-obsidian hover:text-brand-cyan"
                   )}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="h-px bg-brand-obsidian/10 w-24 my-4"></div>
+              <div className="h-px bg-brand-obsidian/10 w-24 my-2"></div>
               <Link 
                 to="/contact" 
-                className="bg-brand-green text-white px-8 py-4 rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-brand-green/30 text-lg w-full max-w-[280px]"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="bg-brand-cyan text-white px-8 py-4 rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-brand-cyan/30 text-lg w-full max-w-[280px]"
               >
                 Book An Appointment
               </Link>
