@@ -45,7 +45,7 @@ export default function Therapies() {
               {/* Card Content */}
               <div className="p-10 flex flex-col flex-1 w-full gap-6">
                 <div className="flex-1">
-                  <h3 className="text-3xl font-display font-black text-brand-obsidian mb-4 uppercase tracking-tight">{item.title}</h3>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-black text-brand-obsidian mb-4 uppercase tracking-tight break-words hyphens-auto">{item.title}</h3>
                   <p className="text-slate-500 font-light leading-relaxed text-lg">
                     {item.desc}
                   </p>

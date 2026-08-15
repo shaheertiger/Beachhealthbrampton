@@ -33,7 +33,7 @@ export default function Contact() {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-[80px] pointer-events-none"></div>
             
-            <h3 className="text-3xl font-display font-bold text-brand-obsidian mb-8 relative z-10">Direct Inquiry</h3>
+            <h3 className="text-2xl md:text-3xl uppercase font-display font-bold text-brand-obsidian mb-8 relative z-10 break-words hyphens-auto">Direct Inquiry</h3>
             <form className="flex flex-col gap-6 relative z-10">
               <div className="flex flex-col gap-3">
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest pl-2">Full Name</label>
@@ -79,7 +79,7 @@ export default function Contact() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -z-0 pointer-events-none"></div>
               
               <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold mb-10 text-brand-obsidian">Coordinates</h3>
+                <h3 className="text-2xl md:text-3xl uppercase font-display font-bold mb-10 text-brand-obsidian break-words hyphens-auto">Coordinates</h3>
                 <div className="flex flex-col gap-8">
                   <div className="flex items-center gap-5 group">
                     <div className="bg-white border border-slate-200 p-4 rounded-full group-hover:bg-brand-green group-hover:text-white group-hover:border-transparent transition-colors shadow-sm">
@@ -113,7 +113,7 @@ export default function Contact() {
             </div>
 
             <div className="glass-panel p-10 rounded-[2.5rem] flex flex-col justify-center items-center text-center flex-1 border border-slate-200 shadow-sm">
-              <h3 className="text-2xl font-display font-bold text-brand-obsidian mb-3">Priority Booking</h3>
+              <h3 className="text-2xl md:text-3xl uppercase font-display font-bold text-brand-obsidian mb-3 break-words hyphens-auto">Priority Booking</h3>
               <p className="text-slate-500 font-light mb-8">Skip the queue. Secure your assessment online instantly.</p>
               <button className="bg-transparent text-brand-obsidian px-8 py-4 rounded-full font-medium border border-slate-300 hover:bg-brand-obsidian hover:text-white hover:border-brand-obsidian transition-all w-full">
                 Access Booking Portal

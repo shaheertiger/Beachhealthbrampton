@@ -71,7 +71,7 @@ export default function Features() {
               {/* Green Divider Line */}
               <div className="w-16 h-1 bg-brand-green mb-2"></div>
               
-              <h2 className="text-4xl md:text-5xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight break-words">
                 {feature.title.split(' ').map((word, i) => (
                   <span key={i} className={word === "Your" ? "text-brand-green block my-1" : "block"}>
                     {word}

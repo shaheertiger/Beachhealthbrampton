@@ -85,28 +85,28 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-bg-base/80 backdrop-blur-xl border-t border-white/20 z-40 overflow-y-auto"
           >
-            <div className="flex flex-col px-8 py-6 gap-6">
+            <div className="flex flex-col items-center justify-center min-h-[70vh] px-8 py-12 gap-8">
               {navLinks.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   className={twMerge(
-                    "text-lg font-medium tracking-wide transition-colors",
-                    isActive(item.path) ? "text-brand-green font-bold" : "text-brand-obsidian"
+                    "text-2xl font-bold tracking-widest uppercase transition-colors text-brand-obsidian drop-shadow-sm",
+                    isActive(item.path) ? "text-brand-green" : "hover:text-brand-green"
                   )}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="h-px bg-slate-100 w-full my-2"></div>
+              <div className="h-px bg-brand-obsidian/10 w-24 my-4"></div>
               <Link 
                 to="/contact" 
-                className="bg-brand-green text-white px-6 py-4 rounded-full text-center font-bold uppercase tracking-wider shadow-lg shadow-brand-green/20"
+                className="bg-brand-green text-white px-8 py-4 rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-brand-green/30 text-lg w-full max-w-[280px]"
               >
                 Book An Appointment
               </Link>

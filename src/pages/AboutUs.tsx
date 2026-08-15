@@ -45,17 +45,17 @@ export default function AboutUs() {
           >
             <div className="glass-panel p-10 rounded-[2.5rem] border border-slate-200 relative overflow-hidden group shadow-sm">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 via-brand-green/10 to-brand-green/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              <h3 className="font-display font-bold text-3xl mb-3 text-brand-obsidian">15+ Years of Mastery</h3>
+              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-3 text-brand-obsidian break-words hyphens-auto">15+ Years of Mastery</h3>
               <p className="text-slate-500 font-light leading-relaxed text-lg">Our extensive experience means we've seen it all and helped thousands of patients return to their peak performance.</p>
             </div>
             <div className="glass-panel p-10 rounded-[2.5rem] border border-slate-200 relative overflow-hidden group shadow-sm">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 via-brand-green/10 to-brand-green/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              <h3 className="font-display font-bold text-3xl mb-3 text-brand-obsidian">Elite Practitioners</h3>
+              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-3 text-brand-obsidian break-words hyphens-auto">Elite Practitioners</h3>
               <p className="text-slate-500 font-light leading-relaxed text-lg">All our therapists are fully trained, licensed, and dedicated to the highest standards of care. We constantly update our methods.</p>
             </div>
             <div className="glass-panel p-10 rounded-[2.5rem] border border-slate-200 relative overflow-hidden group shadow-sm">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 via-brand-green/10 to-brand-green/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              <h3 className="font-display font-bold text-3xl mb-3 text-brand-obsidian">Bespoke Architecture</h3>
+              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-3 text-brand-obsidian break-words hyphens-auto">Bespoke Architecture</h3>
               <p className="text-slate-500 font-light leading-relaxed text-lg">We don't do cookie-cutter solutions. Your recovery plan is meticulously engineered for your physiology and goals.</p>
             </div>
           </motion.div>
