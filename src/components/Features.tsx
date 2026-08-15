@@ -44,7 +44,7 @@ export default function Features() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-full lg:w-1/2"
+              className="w-full lg:w-1/2 relative z-10"
             >
               <div className="relative aspect-square md:aspect-[4/3] w-full p-4">
                 {/* Asymmetric border radius masking */}
@@ -66,7 +66,7 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="w-full lg:w-1/2 flex flex-col gap-6"
+              className="w-full lg:w-1/2 flex flex-col gap-6 relative z-10"
             >
               {/* Green Divider Line */}
               <div className="w-16 h-1 bg-brand-green mb-2"></div>
@@ -88,12 +88,12 @@ export default function Features() {
 
             {/* Connecting Animated SVG Curve */}
             {index < features.length - 1 && (
-              <div className="hidden lg:block absolute w-full h-[350px] left-0 pointer-events-none -bottom-[239px] -z-10">
+              <div className="hidden lg:block absolute w-full h-[350px] left-0 pointer-events-none -bottom-[239px] z-0">
                 <svg width="100%" height="100%" viewBox="0 0 1000 350" preserveAspectRatio="none">
                   <motion.path 
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true, margin: "50px" }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
                     d={!feature.reversed 
                       ? "M 250,0 C 250,175 750,175 750,350" 
