@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="pt-40 pb-24 px-8 min-h-screen bg-bg-base relative overflow-hidden">
+    <div className="pt-32 md:pt-40 pb-24 px-8 min-h-screen bg-bg-base relative overflow-hidden">
       {/* Ambient background blur */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-brand-green/20 rounded-full blur-[150px] mix-blend-multiply pointer-events-none"></div>
 
@@ -15,7 +15,7 @@ export default function Contact() {
           className="text-center mb-20"
         >
           <span className="uppercase tracking-widest text-brand-amber font-bold text-sm block mb-4">Connect With Us</span>
-          <h1 className="text-5xl md:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
             Initiate <span className="text-brand-green">Recovery.</span>
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">

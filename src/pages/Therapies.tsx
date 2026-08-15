@@ -7,7 +7,7 @@ const services = [
 
 export default function Therapies() {
   return (
-    <div className="pt-40 pb-32 px-8 min-h-screen bg-bg-base relative overflow-hidden">
+    <div className="pt-32 md:pt-40 pb-20 md:pb-32 px-8 min-h-screen bg-bg-base relative overflow-hidden">
       {/* Ambient background blur */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-cyan/20 rounded-full blur-[150px] mix-blend-multiply pointer-events-none"></div>
 
@@ -19,7 +19,7 @@ export default function Therapies() {
           className="text-center mb-24"
         >
           <span className="uppercase tracking-widest text-brand-green font-bold text-sm block mb-4">Our Expertise</span>
-          <h1 className="text-5xl md:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
             Comprehensive <br/> <span className="text-brand-green">Therapies.</span>
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">

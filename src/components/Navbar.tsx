@@ -1,7 +1,8 @@
 
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
 export default function Navbar() {
@@ -10,12 +11,25 @@ export default function Navbar() {
   
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     return scrollY.on('change', (latest) => {
       setIsScrolled(latest > 50);
     });
   }, [scrollY]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Our Services', path: '/therapies' },
+    { name: 'The Team', path: '/about' },
+    { name: 'Careers', path: '/contact' }
+  ];
 
   return (
     <motion.nav 
@@ -35,12 +49,7 @@ export default function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          {[
-            { name: 'Home', path: '/' },
-            { name: 'Our Services', path: '/therapies' },
-            { name: 'The Team', path: '/about' },
-            { name: 'Careers', path: '/contact' }
-          ].map((item) => (
+          {navLinks.map((item) => (
             <Link 
               key={item.name}
               to={item.path} 
@@ -62,7 +71,49 @@ export default function Navbar() {
             Book An Appointment
           </Link>
         </motion.div>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="md:hidden text-brand-obsidian p-2 -mr-2 focus:outline-none"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
+          >
+            <div className="flex flex-col px-8 py-6 gap-6">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={twMerge(
+                    "text-lg font-medium tracking-wide transition-colors",
+                    isActive(item.path) ? "text-brand-green font-bold" : "text-brand-obsidian"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="h-px bg-slate-100 w-full my-2"></div>
+              <Link 
+                to="/contact" 
+                className="bg-brand-green text-white px-6 py-4 rounded-full text-center font-bold uppercase tracking-wider shadow-lg shadow-brand-green/20"
+              >
+                Book An Appointment
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

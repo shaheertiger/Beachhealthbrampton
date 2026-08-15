@@ -28,13 +28,13 @@ const features = [
 export default function Features() {
   return (
     <section className="py-24 px-8 relative overflow-hidden bg-bg-base text-slate-600">
-      <div className="max-w-6xl mx-auto flex flex-col gap-32">
+      <div className="max-w-6xl mx-auto flex flex-col gap-20 md:gap-32">
         
         {features.map((feature, index) => (
           <div 
             key={index} 
             className={twMerge(
-              "flex flex-col lg:flex-row items-center gap-16 relative",
+              "flex flex-col lg:flex-row items-center gap-10 md:gap-16 relative",
               feature.reversed ? "lg:flex-row-reverse" : ""
             )}
           >

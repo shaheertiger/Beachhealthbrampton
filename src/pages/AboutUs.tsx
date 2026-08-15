@@ -3,7 +3,7 @@ import Team from '../components/Team';
 
 export default function AboutUs() {
   return (
-    <div className="pt-40 pb-12 bg-bg-base min-h-screen relative overflow-hidden">
+    <div className="pt-32 md:pt-40 pb-12 bg-bg-base min-h-screen relative overflow-hidden">
       {/* Ambient background blur */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-green/20 rounded-full blur-[150px] mix-blend-multiply pointer-events-none"></div>
 
@@ -15,7 +15,7 @@ export default function AboutUs() {
           className="text-center mb-20"
         >
           <span className="uppercase tracking-widest text-brand-amber font-bold text-sm block mb-4">Our Identity</span>
-          <h1 className="text-5xl md:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
             Dedicated to <span className="text-brand-green">Recovery.</span>
           </h1>
           <p className="text-slate-500 max-w-3xl mx-auto text-lg font-light leading-relaxed">
@@ -28,7 +28,7 @@ export default function AboutUs() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
-            className="relative h-[600px] w-full"
+            className="relative h-[400px] md:h-[600px] w-full"
           >
             <div className="absolute inset-0 bg-brand-green/5 mix-blend-overlay z-10 pointer-events-none rounded-[3rem]"></div>
             <img 

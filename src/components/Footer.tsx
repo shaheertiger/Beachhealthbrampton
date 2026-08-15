@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         
         {/* Left Column: Links */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
           <h4 className="text-brand-obsidian font-bold uppercase tracking-widest mb-2">Links</h4>
           <Link to="/" className="text-slate-500 hover:text-brand-obsidian transition-colors">Our Space</Link>
           <Link to="/therapies" className="text-slate-500 hover:text-brand-obsidian transition-colors">What We Offer</Link>
@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         {/* Right Column: Contact Info */}
-        <div className="flex flex-col gap-4 md:text-right">
+        <div className="flex flex-col items-center md:items-end text-center md:text-right gap-4">
           <h4 className="text-brand-obsidian font-bold uppercase tracking-widest mb-2">Contact</h4>
           <p className="text-slate-500">+1 416-690-0900</p>
           <p className="text-slate-500">info@beachhealth.com</p>
