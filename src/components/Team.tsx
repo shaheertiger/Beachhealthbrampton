@@ -1,18 +1,6 @@
 import { motion } from 'framer-motion';
 
-const SocialIcon = ({ type }: { type: 'facebook' | 'twitter' | 'instagram' }) => {
-  const paths = {
-    facebook: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
-    twitter: "M22 4.01c-1 .49-1.98.68-3 .99-1.12-1.27-2.7-1.2-4.12-1.2-4.23 0-4.23 5.76-4.23 5.76C5.28 9.28 3.1 5.3 3.1 5.3s-2.12 3.65 2 6c-.95 0-1.84-.27-2.62-.71 0 0-.1 3.51 3 4.28-.96.26-2.11.33-3 .12.92 2.92 3.82 2.9 3.82 2.9-2.22 1.74-5.32 1.57-6 1.57 3.32 2.12 7.15 2.12 11.08 0 8.35-4.52 8.35-13.62 8.35-13.62 2.11-1.53 2.27-3.88 2.27-3.88z",
-    instagram: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01 M6.5 2h11a5 5 0 0 1 5 5v11a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"
-  };
 
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d={paths[type]}></path>
-    </svg>
-  );
-};
 
 const teamMembers = [
   {

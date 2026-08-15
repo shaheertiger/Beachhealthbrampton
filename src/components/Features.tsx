@@ -3,21 +3,21 @@ import { twMerge } from 'tailwind-merge';
 
 const features = [
   {
-    title: "Reframe Your Wellbeing",
+    title: "Restore Your Wellbeing",
     description: "We're here to support and empower you on your path to recovery or improvement, ensuring that your treatment plan is as individual as you are.",
     image: "/physio-2.jpg",
     reversed: false,
     imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl"
   },
   {
-    title: "Reframe Your Pain",
+    title: "Overcome Your Pain",
     description: "Pain can get in the way of life, that's why we offer full body treatments with expert guidance to achieve lasting relief and improved quality of life.",
     image: "/chiro-1.jpg",
     reversed: true,
     imageStyle: "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-xl rounded-bl-xl"
   },
   {
-    title: "Reframe Your Movement",
+    title: "Optimize Your Movement",
     description: "Unlock the potential for a life in full motion with personalized assessment and treatment plans to optimize function and performance.",
     image: "/chiro-2.jpg",
     reversed: false,

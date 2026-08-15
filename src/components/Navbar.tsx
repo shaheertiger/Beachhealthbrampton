@@ -1,4 +1,4 @@
-import { Activity } from 'lucide-react';
+
 import { motion, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';

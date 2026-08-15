@@ -41,6 +41,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <main className="min-h-screen bg-bg-base font-sans relative overflow-x-hidden selection:bg-brand-green selection:text-white flex flex-col">
         <Navbar />
         <div className="flex-grow">
