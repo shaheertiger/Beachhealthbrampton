@@ -5,7 +5,7 @@ export default function Hero() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen flex flex-col justify-end pb-12 md:pb-24 px-8 overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-[100svh] flex flex-col justify-start md:justify-end pt-32 md:pt-0 pb-12 md:pb-24 px-6 md:px-8 overflow-hidden">
       
       {/* Background Image with Light Mask */}
       <div className="absolute inset-0 z-0">
