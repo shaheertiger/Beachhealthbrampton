@@ -43,9 +43,14 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         
-        {/* Logo matching the reference vibe */}
-        <Link to="/" className="flex items-center group">
-          <img src="/logo.png" alt="BeachHealth Logo" className="h-16 md:h-20 object-contain" />
+        {/* Coded Logo - no image dependency */}
+        <Link to="/" className="flex items-center group select-none">
+          <span
+            className="font-display font-black uppercase tracking-tight leading-none"
+            style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}
+          >
+            <span className="text-brand-obsidian">BEAC</span><span className="text-brand-cyan" style={{ fontWeight: 900 }}>+</span><span className="text-brand-obsidian">EALTH</span>
+          </span>
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
