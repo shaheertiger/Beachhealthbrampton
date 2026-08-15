@@ -12,6 +12,16 @@ const FONTS = [
   { name: 'Lora', family: '"Lora", serif' },
   { name: 'Oswald', family: '"Oswald", sans-serif' },
   { name: 'Poppins', family: '"Poppins", sans-serif' },
+  { name: 'Merriweather', family: '"Merriweather", serif' },
+  { name: 'Nunito', family: '"Nunito", sans-serif' },
+  { name: 'Work Sans', family: '"Work Sans", sans-serif' },
+  { name: 'DM Sans', family: '"DM Sans", sans-serif' },
+  { name: 'Cinzel', family: '"Cinzel", serif' },
+  { name: 'Bebas Neue', family: '"Bebas Neue", sans-serif' },
+  { name: 'Cormorant', family: '"Cormorant Garamond", serif' },
+  { name: 'Josefin Sans', family: '"Josefin Sans", sans-serif' },
+  { name: 'Manrope', family: '"Manrope", sans-serif' },
+  { name: 'Rubik', family: '"Rubik", sans-serif' },
 ];
 
 export default function TeamFontPreview() {
