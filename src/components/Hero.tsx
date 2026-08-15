@@ -56,12 +56,8 @@ export default function Hero() {
 
       </div>
 
-      {/* SVG Wave Shape Divider */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 translate-y-[1px]">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[50px] md:h-[100px]">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.98,132.84,204.9,132.84,244.6,132.84,284.14,124.93,321.39,56.44Z" style={{ fill: 'var(--color-bg-base)' }}></path>
-        </svg>
-      </div>
+      {/* Smooth blend into the background color below */}
+      <div className="absolute bottom-0 left-0 w-full h-48 md:h-64 bg-gradient-to-t from-bg-base via-bg-base/80 to-transparent z-10 pointer-events-none"></div>
     </section>
   );
 }
