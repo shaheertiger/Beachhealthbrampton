@@ -88,28 +88,20 @@ export default function Features() {
 
             {/* Connecting Animated SVG Curve */}
             {index < features.length - 1 && (
-              <div className="hidden lg:block absolute w-full h-[128px] left-0 pointer-events-none -bottom-[128px] z-0">
-                <svg width="100%" height="100%" viewBox="0 0 1000 128" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id={`grad-curve-${index}`} x1={!feature.reversed ? "0%" : "100%"} y1="0%" x2={!feature.reversed ? "100%" : "0%"} y2="0%">
-                      <stop offset="0%" stopColor="#06b6d4" />
-                      <stop offset="100%" stopColor="#059669" />
-                    </linearGradient>
-                  </defs>
+              <div className="hidden lg:block absolute w-full h-[350px] left-0 pointer-events-none -bottom-[239px] -z-10">
+                <svg width="100%" height="100%" viewBox="0 0 1000 350" preserveAspectRatio="none">
                   <motion.path 
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-10%" }}
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true, margin: "50px" }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
                     d={!feature.reversed 
-                      ? "M 250,0 C 250,80 750,48 750,128" 
-                      : "M 750,0 C 750,80 250,48 250,128"
+                      ? "M 250,0 C 250,175 750,175 750,350" 
+                      : "M 750,0 C 750,175 250,175 250,350"
                     }
-                    stroke={`url(#grad-curve-${index})`}
-                    strokeWidth="4"
+                    stroke="#0ea5e9" /* 1px blue line */
+                    strokeWidth="1"
                     fill="none"
-                    strokeLinecap="round"
-                    strokeDasharray="8 8"
                   />
                 </svg>
               </div>
