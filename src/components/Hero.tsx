@@ -31,18 +31,18 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          <h1 className="text-[clamp(4rem,13vw,10rem)] font-black text-brand-obsidian tracking-tighter uppercase leading-[0.9] mb-6">
-            Restore Your<br/>Mobility.
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-brand-green tracking-tighter uppercase leading-[1.0] mb-4">
+            Restore Your <br/> Mobility.
           </h1>
-          <p className="text-xl md:text-2xl text-brand-obsidian/80 font-light mb-8">
-            Personalized care for a<br/>pain-free life.
+          <p className="text-2xl md:text-3xl text-brand-obsidian font-medium mb-8">
+            Personalized care for a <br/> pain-free life.
           </p>
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-2"
+            className="mt-2 md:mt-4"
           >
             <motion.button 
               whileHover={{ scale: 1.05 }}
