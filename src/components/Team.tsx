@@ -33,7 +33,7 @@ export default function Team() {
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="w-16 h-1 bg-brand-green mb-4"></div>
-          <h2 className="text-4xl md:text-5xl font-black text-brand-obsidian uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-obsidian uppercase tracking-tight break-words break-all sm:break-normal">
             Dedicated to <span className="text-brand-green block my-1">Your Recovery</span>
           </h2>
         </div>
@@ -51,11 +51,11 @@ export default function Team() {
               className="rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-md rounded-bl-md p-8 flex flex-col items-center text-center bg-brand-navy border border-slate-100 shadow-xl group hover:border-brand-green/30 transition-all"
             >
               {/* Circular Avatar */}
-              <div className="w-32 h-32 rounded-full overflow-hidden mb-6 bg-slate-100 border-2 border-brand-green/50 group-hover:border-brand-green transition-colors">
+              <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto bg-slate-100 border-2 border-brand-green/50 group-hover:border-brand-green transition-colors">
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?background=f4f4f5&color=111&name=' + member.name.replace(' ', '+');
                   }}

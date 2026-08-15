@@ -19,7 +19,7 @@ export default function Therapies() {
           className="text-center mb-24"
         >
           <span className="uppercase tracking-widest text-brand-green font-bold text-sm block mb-4">Our Expertise</span>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-7xl font-black text-brand-obsidian mt-4 mb-6 leading-tight tracking-tight break-words break-all sm:break-normal">
             Comprehensive <br/> <span className="text-brand-green">Therapies.</span>
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">

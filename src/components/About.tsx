@@ -9,7 +9,7 @@ export default function About() {
         <div className="flex flex-col gap-6 order-2 lg:order-1">
           <div className="w-16 h-1 bg-brand-green mb-2"></div>
           
-          <h2 className="text-5xl md:text-6xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight break-words break-all sm:break-normal">
             From <span className="text-brand-green">Beginnings</span> <br/>
             To Modern Practice
           </h2>
