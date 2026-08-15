@@ -39,7 +39,7 @@ export default function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
           {teamMembers.map((member, index) => (
             <motion.div 
               key={index}
@@ -48,14 +48,14 @@ export default function Team() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -5 }}
-              className="rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-md rounded-bl-md p-8 flex flex-col items-center text-center bg-brand-navy border border-slate-100 shadow-xl group hover:border-brand-green/30 transition-all"
+              className="w-full max-w-sm mx-auto rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-md rounded-bl-md p-8 flex flex-col items-center justify-center text-center bg-white border border-slate-100 shadow-xl group hover:border-brand-green/30 transition-all"
             >
               {/* Circular Avatar */}
-              <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto bg-slate-100 border-2 border-brand-green/50 group-hover:border-brand-green transition-colors">
+              <div className="relative w-32 h-32 flex-shrink-0 rounded-full overflow-hidden mb-6 mx-auto bg-slate-100 border-2 border-brand-green/50 group-hover:border-brand-green transition-colors flex items-center justify-center">
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="absolute inset-0 w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?background=f4f4f5&color=111&name=' + member.name.replace(' ', '+');
                   }}
