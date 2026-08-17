@@ -14,15 +14,14 @@
   --color-bg-glass-hover: rgba(255, 255, 255, 0.9);
   --color-border-glow: rgba(0, 144, 212, 0.3);
   
-  --font-sans: 'Cormorant Garamond', serif;
-  --font-display: 'Cormorant Garamond', serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-display: 'Poppins', sans-serif;
 }
 
 body {
   background-color: var(--color-bg-base);
   color: #334155; /* Slate 700 for body text */
   font-family: var(--font-sans);
-  font-size: 1.125rem; /* Bumped base font size slightly for readability with serif */
   -webkit-font-smoothing: antialiased;
 }
 
