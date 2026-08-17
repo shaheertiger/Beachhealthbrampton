@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Therapies from './pages/Therapies';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import FloatingTextButton from './components/FloatingTextButton';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -53,6 +54,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
+        <FloatingTextButton />
       </main>
     </Router>
   );
