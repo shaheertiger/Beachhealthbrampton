@@ -46,8 +46,8 @@ function App() {
       <ScrollToTop />
       <main className="min-h-screen bg-bg-base font-sans relative overflow-x-hidden selection:bg-brand-green selection:text-white flex flex-col">
         <TopBar />
-        <Navbar />
-        <div className="flex-grow">
+        <div className="relative flex-grow w-full">
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/therapies" element={<Therapies />} />
