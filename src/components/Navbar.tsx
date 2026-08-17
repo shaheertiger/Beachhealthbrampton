@@ -43,14 +43,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         
-        {/* Coded Logo */}
+        {/* Image Logo */}
         <Link to="/" className="flex items-center group select-none">
-          <span
-            className="font-display font-black uppercase tracking-tight leading-none text-brand-green"
-            style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}
-          >
-            BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
-          </span>
+          <img 
+            src="/logo-transparent.png" 
+            alt="Beach Health Logo" 
+            className="h-12 w-auto object-contain"
+          />
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
@@ -98,9 +97,11 @@ export default function Navbar() {
             {/* Mobile Menu Header (Matches Navbar) */}
             <div className="flex justify-between items-center px-8 py-6 border-b border-white/10">
               <Link to="/" className="flex items-center group select-none" onClick={() => setIsMobileMenuOpen(false)}>
-                <span className="font-display font-black uppercase tracking-tight leading-none text-brand-green" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
-                  BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
-                </span>
+                <img 
+                  src="/logo-transparent.png" 
+                  alt="Beach Health Logo" 
+                  className="h-10 w-auto object-contain"
+                />
               </Link>
               <button className="text-brand-obsidian p-2 -mr-2 focus:outline-none" onClick={() => setIsMobileMenuOpen(false)}>
                 <X size={28} />

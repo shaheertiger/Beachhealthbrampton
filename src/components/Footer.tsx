@@ -19,9 +19,11 @@ export default function Footer() {
         {/* Center Column: Logo & Newsletter */}
         <div className="flex flex-col items-center text-center gap-6">
           <Link to="/" className="flex items-center justify-center group select-none">
-            <span className="font-display font-black uppercase tracking-tight leading-none text-brand-green" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>
-              BEAC<span style={{ fontWeight: 900 }}>+</span>EALTH
-            </span>
+            <img 
+              src="/logo-transparent.png" 
+              alt="Beach Health Logo" 
+              className="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
+            />
           </Link>
           <button className="text-brand-green font-bold uppercase tracking-widest hover:text-brand-obsidian transition-colors">
             Join Our Newsletter
