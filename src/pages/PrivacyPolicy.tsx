@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold text-brand-obsidian mt-8 mb-4">1. Introduction</h2>
         <p className="text-slate-600 mb-6">
-          Beach Health ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or communicate with us, including via SMS text messaging.
+          Beach Health is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or communicate with us, including via SMS text messaging.
         </p>
 
         <h2 className="text-2xl font-bold text-brand-obsidian mt-8 mb-4">2. SMS Communications & Consent</h2>
