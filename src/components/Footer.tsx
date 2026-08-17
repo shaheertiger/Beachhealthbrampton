@@ -32,19 +32,31 @@ export default function Footer() {
 
         {/* Right Column: Contact Info */}
         <div className="flex flex-col items-center md:items-end text-center md:text-right gap-4">
-          <h4 className="text-brand-obsidian font-bold uppercase tracking-widest mb-2">Contact</h4>
-          <p className="text-slate-500">+1 416-690-0900</p>
-          <p className="text-slate-500">info@beachhealth.com</p>
-          <p className="text-slate-500 mt-2">
-            1574 Kingston Road,<br />
-            Toronto, ON, M1N 1S2
-          </p>
+          <h4 className="text-brand-obsidian font-bold uppercase tracking-widest mb-2">Locations</h4>
+          
+          <div className="mb-2">
+            <p className="font-bold text-brand-obsidian text-sm uppercase">Brampton Clinic</p>
+            <p className="text-slate-500 text-xs mt-1">Unit 7A, 155 Clark Blvd,<br />Brampton, ON L6T 4G6</p>
+          </div>
+
+          <div>
+            <a 
+              href="https://beachealth.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-bold text-brand-obsidian text-sm uppercase hover:text-brand-green transition-colors inline-block"
+            >
+              Toronto Clinic &rarr;
+            </a>
+            <p className="text-slate-500 text-xs mt-1">1574 Kingston Road,<br />Toronto, ON M1N 1S2</p>
+          </div>
+
         </div>
       </div>
 
       {/* Copyright Bar */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center text-slate-500 text-xs gap-4 pt-8 border-t border-zinc-200">
-        <p>&copy; {new Date().getFullYear()} Beach Health Clinic | Privacy Policy | Terms of Service</p>
+        <p>&copy; {new Date().getFullYear()} Beach Health Clinic | <Link to="/privacy-policy" className="hover:text-brand-green transition-colors">Privacy Policy</Link> | Terms of Service</p>
       </div>
     </footer>
   );

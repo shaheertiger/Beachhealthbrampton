@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Therapies from './pages/Therapies';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import FloatingTextButton from './components/FloatingTextButton';
 
 function ScrollToTop() {
@@ -53,6 +54,7 @@ function App() {
             <Route path="/therapies" element={<Therapies />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </div>
         <Footer />
