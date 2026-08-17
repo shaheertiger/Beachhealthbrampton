@@ -5,7 +5,7 @@ export default function Hero() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[100svh] flex flex-col pt-32 md:pt-0 pb-12 md:pb-24 px-6 md:px-8 overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col pt-24 md:pt-0 pb-12 md:pb-24 px-6 md:px-8 overflow-hidden">
       
       {/* Background Image with Light Mask */}
       <div className="absolute inset-0 z-0">
@@ -14,7 +14,7 @@ export default function Hero() {
           <img 
             src="/hero-mobile.jpg"
             alt="Rehab Background"
-            className="w-full h-full object-cover object-bottom md:object-center"
+            className="w-full h-full object-cover object-[center_70%] md:object-center"
             style={{ filter: "grayscale(20%)" }} // Slight desaturation
           />
         </picture>
@@ -22,19 +22,19 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col flex-grow justify-between md:justify-end">
+      <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col flex-grow justify-start md:justify-end">
         
         {/* Text Block */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-start"
+          className="flex flex-col items-start mt-4 md:mt-0"
         >
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-[1.1] mb-3 max-w-xs md:max-w-sm" style={{ color: '#0090d4' }}>
             Restore Your<br/>Mobility.
           </h1>
-          <p className="text-xl md:text-2xl text-brand-obsidian font-medium mb-6 max-w-xs">
+          <p className="text-xl md:text-2xl text-brand-obsidian font-medium mb-2 max-w-xs">
             Personalized care for a <br/> pain-free life.
           </p>
         </motion.div>
