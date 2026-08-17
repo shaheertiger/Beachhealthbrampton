@@ -25,24 +25,33 @@ export default function FloatingTextButton() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ type: 'spring', bounce: 0.4 }}
-            className="bg-white rounded-2xl p-4 shadow-2xl shadow-black/10 border border-slate-100 flex items-center gap-3 relative max-w-[260px]"
           >
-            <button 
-              onClick={() => setShowTooltip(false)}
-              className="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-sm border border-slate-100 text-slate-400 hover:text-brand-obsidian transition-colors"
+            {/* Inner div for continuous floating animation */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className="bg-white rounded-2xl p-4 shadow-2xl shadow-black/10 border border-slate-100 flex items-center gap-3 relative max-w-[260px]"
             >
-              <X size={14} />
-            </button>
-            <img 
-              src="/hero-mobile.jpg" 
-              alt="Support Team" 
-              className="w-10 h-10 rounded-full object-cover shrink-0"
-            />
-            <p className="text-sm font-medium text-brand-obsidian leading-tight">
-              Hi there, any questions? <br/> <span className="text-brand-green font-bold cursor-pointer hover:underline" onClick={() => navigate('/contact')}>Text us here!</span>
-            </p>
-            {/* Tail */}
-            <div className="absolute -bottom-2 right-10 w-4 h-4 bg-white border-b border-r border-slate-100 transform rotate-45"></div>
+              <button 
+                onClick={() => setShowTooltip(false)}
+                className="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-sm border border-slate-100 text-slate-400 hover:text-brand-obsidian transition-colors z-10"
+              >
+                <X size={14} />
+              </button>
+              
+              <img 
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=150&auto=format&fit=crop" 
+                alt="Support Agent" 
+                className="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-white shadow-sm"
+              />
+              
+              <p className="text-sm font-medium text-brand-obsidian leading-tight">
+                Hi there, any questions? <br/> <span className="text-brand-green font-bold cursor-pointer hover:underline" onClick={() => navigate('/contact')}>Text us here!</span>
+              </p>
+              
+              {/* Tail pointing down to the button */}
+              <div className="absolute -bottom-2 right-10 w-4 h-4 bg-white border-b border-r border-slate-100 transform rotate-45"></div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
