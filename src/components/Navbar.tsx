@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <motion.nav 
       className={twMerge(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-500",
+        "sticky top-0 left-0 w-full z-40 transition-all duration-500",
         isScrolled ? "bg-bg-base/90 backdrop-blur-md py-4 shadow-md border-b border-zinc-200" : "py-6 bg-transparent"
       )}
       initial={{ y: -100 }}
