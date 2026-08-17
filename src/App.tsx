@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
+import TopBar from './components/TopBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Therapies from './pages/Therapies';
@@ -44,6 +45,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <main className="min-h-screen bg-bg-base font-sans relative overflow-x-hidden selection:bg-brand-green selection:text-white flex flex-col">
+        <TopBar />
         <Navbar />
         <div className="flex-grow">
           <Routes>
