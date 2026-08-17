@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone, Facebook, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 export default function TopBar() {
   return (
@@ -24,12 +25,12 @@ export default function TopBar() {
         </div>
 
         {/* Social Icons */}
-        <div className="flex items-center gap-2 mt-2 md:mt-0">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="bg-brand-green text-white p-1.5 rounded border border-brand-green hover:bg-white hover:text-brand-green transition-colors">
-            <Facebook size={16} fill="currentColor" strokeWidth={0} />
+        <div className="flex items-center gap-4 mt-2 md:mt-0">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-brand-green hover:text-brand-obsidian transition-colors">
+            <FaFacebookF size={16} />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="bg-white text-brand-obsidian border border-slate-300 p-1.5 rounded hover:border-brand-green hover:text-brand-green transition-colors">
-            <Instagram size={16} />
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-green hover:text-brand-obsidian transition-colors">
+            <FaInstagram size={16} />
           </a>
         </div>
 
