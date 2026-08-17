@@ -16,7 +16,7 @@ export default function FloatingTextButton() {
   }, []);
 
   return (
-    <div className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-36 right-4 md:bottom-8 md:right-8 z-50 flex flex-col items-end gap-3">
       {/* Speech Bubble Tooltip */}
       <AnimatePresence>
         {showTooltip && (
