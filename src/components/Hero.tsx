@@ -14,7 +14,7 @@ export default function Hero() {
           <img 
             src="/hero-mobile.jpg"
             alt="Rehab Background"
-            className="w-full h-full object-cover object-[center_70%] md:object-center"
+            className="w-full h-full object-cover object-[center_30%] md:object-center"
             style={{ filter: "grayscale(20%)" }} // Slight desaturation
           />
         </picture>
