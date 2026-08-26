@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
@@ -21,13 +22,15 @@ export default function About() {
           </p>
           
           <div>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-brand-green text-white px-10 py-4 rounded-md font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50"
-            >
-              Read More
-            </motion.button>
+            <Link to="/about">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50"
+              >
+                Read More
+              </motion.button>
+            </Link>
           </div>
         </div>
 
