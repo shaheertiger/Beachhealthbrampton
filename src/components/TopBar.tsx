@@ -26,7 +26,7 @@ export default function TopBar() {
 
         {/* Social Icons */}
         <div className="flex items-center gap-4 mt-2 md:mt-0">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-brand-green hover:text-brand-obsidian transition-colors">
+          <a href="https://www.facebook.com/profile.php?id=61593573940997" target="_blank" rel="noreferrer" className="text-brand-green hover:text-brand-obsidian transition-colors">
             <FaFacebookF size={16} />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-green hover:text-brand-obsidian transition-colors">
