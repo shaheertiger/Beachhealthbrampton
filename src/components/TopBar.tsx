@@ -18,9 +18,9 @@ export default function TopBar() {
             <span>(905) 595-3480</span>
           </a>
           <span className="hidden md:inline text-slate-300">|</span>
-          <a href="mailto:brampton@bpwi.ca" className="flex items-center gap-1.5 hover:text-brand-green transition-colors">
+          <a href="mailto:hello@beachhealth.com" className="flex items-center gap-1.5 hover:text-brand-green transition-colors">
             <Mail size={14} className="text-brand-green" />
-            <span>brampton@bpwi.ca</span>
+            <span>hello@beachhealth.com</span>
           </a>
         </div>
 

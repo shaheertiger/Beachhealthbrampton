@@ -45,7 +45,7 @@ export default function Contact() {
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
               <h3 className="text-xl font-bold text-brand-obsidian mb-2">Email Us</h3>
-              <p className="text-slate-600 text-lg">brampton@bpwi.ca</p>
+              <p className="text-slate-600 text-lg">hello@beachhealth.com</p>
             </div>
             <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center flex-shrink-0 relative">
               <Mail size={28} />
@@ -73,7 +73,7 @@ export default function Contact() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm"
         >
-          <form action="https://formsubmit.co/brampton@bpwi.ca" method="POST" className="flex flex-col gap-5 h-full justify-between">
+          <form action="https://formsubmit.co/hello@beachhealth.com" method="POST" className="flex flex-col gap-5 h-full justify-between">
             {/* FormSubmit Configuration */}
             <input type="hidden" name="_subject" value="New Website Contact Form Submission" />
             <input type="hidden" name="_captcha" value="false" />
