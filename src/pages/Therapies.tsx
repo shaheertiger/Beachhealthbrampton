@@ -1,50 +1,51 @@
 import { motion } from 'framer-motion';
-import { Activity, Footprints, Shield, HeartPulse, Stethoscope, HandHeart } from 'lucide-react';
+import { Activity, Footprints, Zap, HeartPulse, Stethoscope, HandHeart } from 'lucide-react';
 
 const services = [
   { 
     title: 'Chiropractic', 
     desc: 'Experience spine health and relief at our chiropractic clinic.',
     Icon: Activity,
-    color: 'text-brand-green',
-    bg: 'bg-green-50'
   },
   { 
     title: 'Physiotherapy', 
     desc: 'Discover pain relief and mobility solutions at our physiotherapy clinic.',
     Icon: HeartPulse,
-    color: 'text-orange-400',
-    bg: 'bg-orange-50'
   },
   { 
     title: 'Massage Therapy', 
     desc: 'Relax and rejuvenate with our registered massage therapy',
     Icon: HandHeart,
-    color: 'text-brand-green',
-    bg: 'bg-green-50'
   },
   { 
     title: 'Pain Management', 
     desc: 'Take control of pain with our expert pain management solutions',
     Icon: Stethoscope,
-    color: 'text-orange-400',
-    bg: 'bg-orange-50'
   },
   { 
     title: 'Custom Orthotics', 
     desc: 'Step into comfort with custom orthotics.',
     Icon: Footprints,
-    color: 'text-brand-green',
-    bg: 'bg-green-50'
   },
   { 
-    title: 'Custom Bracing', 
-    desc: 'Find support and stability with custom bracing solutions.',
-    Icon: Shield,
-    color: 'text-orange-400',
-    bg: 'bg-orange-50'
+    title: 'Shockwave Therapy', 
+    desc: 'Accelerate healing and relieve pain with advanced shockwave therapy.',
+    Icon: Zap,
   },
 ];
+
+const getCardStyle = (index: number) => {
+  const col = index % 3;
+  if (col === 0) return "rounded-tl-[5rem] rounded-tr-3xl rounded-bl-3xl rounded-br-3xl bg-white border border-slate-100 shadow-sm hover:shadow-md";
+  if (col === 1) return "rounded-t-[6rem] rounded-b-3xl bg-[#FFF6EF] border border-[#FDECE2] shadow-sm hover:shadow-md";
+  return "rounded-tr-[5rem] rounded-tl-3xl rounded-bl-3xl rounded-br-3xl bg-white border border-slate-100 shadow-sm hover:shadow-md";
+};
+
+const getIconStyle = (index: number) => {
+  const col = index % 3;
+  if (col === 1) return "bg-[#F2A679] text-white";
+  return "bg-[#EAF9F1] text-brand-green"; 
+};
 
 export default function Therapies() {
   return (
@@ -75,14 +76,14 @@ export default function Therapies() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -5 }}
-              className="bg-white/80 backdrop-blur-sm rounded-[3rem] p-10 flex flex-col items-center text-center transition-all border border-slate-200 shadow-sm hover:shadow-md"
+              className={`p-10 flex flex-col items-center text-center transition-all ${getCardStyle(index)}`}
             >
-              <h3 className="text-lg font-black text-brand-obsidian mb-4 uppercase tracking-widest">{item.title}</h3>
-              <p className="text-slate-500 font-light leading-relaxed text-sm flex-grow mb-8 px-2">
+              <h3 className="text-[17px] font-bold text-brand-obsidian mb-4 mt-2 tracking-wide">{item.title}</h3>
+              <p className="text-slate-500 font-light leading-relaxed text-[15px] flex-grow mb-10 px-2 max-w-[250px]">
                 {item.desc}
               </p>
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${item.bg}`}>
-                <item.Icon className={item.color} size={24} />
+              <div className={`w-14 h-14 rounded-t-2xl rounded-b-xl flex items-center justify-center ${getIconStyle(index)}`}>
+                <item.Icon size={24} strokeWidth={1.5} />
               </div>
             </motion.div>
           ))}
