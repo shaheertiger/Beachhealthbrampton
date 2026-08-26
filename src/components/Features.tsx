@@ -21,7 +21,7 @@ const features: Feature[] = [
     image: "/physio-2.jpg",
     reversed: false,
     imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl",
-    button: { text: "Book Online", link: "https://beachealth.janeapp.com/" },
+    button: { text: "Book Online", link: "mailto:brampton@bpwi.ca" },
     footerText: "Direct billing available · No referral needed · New patients welcome",
     renderTitleNormal: true
   },
@@ -31,7 +31,7 @@ const features: Feature[] = [
     image: "/chiro-1.jpg",
     reversed: true,
     imageStyle: "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-xl rounded-bl-xl",
-    button: { text: "Book your first Physio visit", link: "https://beachealth.janeapp.com/" }
+    button: { text: "Book your first Physio visit", link: "mailto:brampton@bpwi.ca" }
   },
   {
     title: "Optimize Your Movement",
@@ -39,7 +39,7 @@ const features: Feature[] = [
     image: "/chiro-2.jpg",
     reversed: false,
     imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl",
-    button: { text: "Book a chiropractic assessment", link: "https://beachealth.janeapp.com/" }
+    button: { text: "Book a chiropractic assessment", link: "mailto:brampton@bpwi.ca" }
   }
 ];
 
