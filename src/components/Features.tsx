@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
+import { Link } from 'react-router-dom';
 
 type Feature = {
   title: string;
@@ -21,7 +22,7 @@ const features: Feature[] = [
     image: "/physio-2.jpg",
     reversed: false,
     imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl",
-    button: { text: "Book Online", link: "mailto:brampton@bpwi.ca" },
+    button: { text: "Book Online", link: "/contact" },
     footerText: "Direct billing available · No referral needed · New patients welcome",
     renderTitleNormal: true
   },
@@ -31,7 +32,7 @@ const features: Feature[] = [
     image: "/chiro-1.jpg",
     reversed: true,
     imageStyle: "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-xl rounded-bl-xl",
-    button: { text: "Book your first Physio visit", link: "mailto:brampton@bpwi.ca" }
+    button: { text: "Book your first Physio visit", link: "/contact" }
   },
   {
     title: "Optimize Your Movement",
@@ -39,7 +40,7 @@ const features: Feature[] = [
     image: "/chiro-2.jpg",
     reversed: false,
     imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl",
-    button: { text: "Book a chiropractic assessment", link: "mailto:brampton@bpwi.ca" }
+    button: { text: "Book a chiropractic assessment", link: "/contact" }
   }
 ];
 
@@ -115,7 +116,7 @@ export default function Features() {
 
               {feature.button && (
                 <div className="mt-4 flex flex-col items-start gap-4">
-                  <a href={feature.button.link} target="_blank" rel="noopener noreferrer">
+                  <Link to={feature.button.link}>
                     <motion.button 
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -123,7 +124,7 @@ export default function Features() {
                     >
                       {feature.button.text}
                     </motion.button>
-                  </a>
+                  </Link>
                   {feature.footerText && (
                     <span className="text-sm text-slate-500 font-medium max-w-sm">
                       {feature.footerText}
