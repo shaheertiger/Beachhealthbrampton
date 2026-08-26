@@ -12,9 +12,6 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="uppercase tracking-widest text-brand-green font-bold text-xs block mb-3">
-            Connect With Us
-          </span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-obsidian mb-5 leading-tight tracking-tight">
             Initiate <span className="text-brand-green">Recovery.</span>
           </h1>
