@@ -27,10 +27,11 @@ const features: Feature[] = [
   },
   {
     title: "Overcome Your Pain",
-    description: "Pain can get in the way of life, that's why we offer full body treatments with expert guidance to achieve lasting relief and improved quality of life.",
+    description: "If Neck pain, sciatica, headaches, or \"tech neck\" slowing you down and you want clear answers about what's happening and what to do about it. our physiotherapist can help!\n\nThey perform a thorough assessment and create a treatment plan focused on reducing your pain and restoring movement, so you can get back to what you were doing.",
     image: "/chiro-1.jpg",
     reversed: true,
-    imageStyle: "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-xl rounded-bl-xl"
+    imageStyle: "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-xl rounded-bl-xl",
+    button: { text: "Book your first Physio visit", link: "https://beachealth.janeapp.com/" }
   },
   {
     title: "Optimize Your Movement",
@@ -107,7 +108,7 @@ export default function Features() {
                 </h3>
               )}
               
-              <p className="text-lg leading-relaxed text-slate-500 font-light max-w-lg mt-4">
+              <p className="text-lg leading-relaxed text-slate-500 font-light max-w-lg mt-4 whitespace-pre-line">
                 {feature.description}
               </p>
 
