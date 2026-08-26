@@ -55,10 +55,10 @@ export default function Contact() {
           {/* Map */}
           <div className="bg-white rounded-3xl p-2 border border-slate-200 shadow-sm overflow-hidden h-80">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.634674712411!2d-79.7188734234057!3d43.65574575091763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3fc28a7e4bdf%3A0xc6651811e592df80!2sBrampton%20Physiotherapy%20%2B%20Wellness%20Institute!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
+              src="https://maps.google.com/maps?q=155%20Clark%20Blvd,%20Brampton,%20ON%20L6T%204G6&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
-              style={{ border: 0, borderRadius: '1rem' }} 
+              style={{ border: 0, borderRadius: '1.5rem' }} 
               allowFullScreen={false} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade">
