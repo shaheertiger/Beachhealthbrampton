@@ -7,6 +7,22 @@ interface NewsletterModalProps {
   onClose: () => void;
 }
 
+// Generates a perfectly smooth scalloped circular badge (rosette)
+const generateRosettePath = (cx: number, cy: number, r: number, scallops: number, depth: number) => {
+  let path = '';
+  // Use 360 points for perfect smoothness
+  for (let i = 0; i <= 360; i += 1) {
+    const angle = (i * Math.PI) / 180;
+    // Math.cos creates the wavy/scalloped effect
+    const radius = r + depth * Math.cos(scallops * angle);
+    const x = cx + radius * Math.cos(angle);
+    const y = cy + radius * Math.sin(angle);
+    if (i === 0) path += `M ${x} ${y}`;
+    else path += ` L ${x} ${y}`;
+  }
+  return path + ' Z';
+};
+
 export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -14,7 +30,6 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -28,7 +43,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           
           {/* Backdrop with elegant blur */}
           <motion.div
@@ -37,60 +52,51 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             onClick={onClose}
-            className="absolute inset-0 bg-brand-obsidian/60 backdrop-blur-md"
+            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
           />
 
-          {/* Premium Modal Content - 2 Column Layout */}
+          {/* Premium Scalloped Circular Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.7, bounce: 0.2 }}
-            className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-[0_30px_100px_-15px_rgba(0,144,212,0.3)] z-10 flex flex-col md:flex-row overflow-hidden"
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", duration: 0.7, bounce: 0.4 }}
+            className="relative flex items-center justify-center z-10 w-[95vw] max-w-[600px] aspect-square"
           >
+            {/* Scalloped Background SVG (Rosette Badge) */}
+            <div className="absolute inset-0 w-full h-full text-[#FDFBF7] drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex items-center justify-center">
+              <svg 
+                viewBox="0 0 500 500" 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="w-full h-full fill-current"
+              >
+                {/* cx=250, cy=250, radius=230, scallops=24, depth=12 */}
+                <path d={generateRosettePath(250, 250, 225, 24, 12)} />
+              </svg>
+            </div>
+
             {/* Close Button */}
             <button 
               onClick={onClose}
-              className="absolute top-6 right-6 text-slate-400 hover:text-brand-obsidian transition-colors z-20 bg-slate-100/50 backdrop-blur-sm hover:bg-slate-200 rounded-full p-2"
+              className="absolute top-[12%] right-[12%] text-slate-400 hover:text-brand-obsidian transition-colors z-20 bg-white hover:bg-slate-50 rounded-full p-2 shadow-sm border border-slate-100"
             >
               <X size={20} strokeWidth={2.5} />
             </button>
 
-            {/* Left Image Section */}
-            <div className="relative w-full md:w-1/2 h-48 md:h-auto overflow-hidden bg-brand-green">
-              <div className="absolute inset-0 bg-brand-obsidian/20 z-10 mix-blend-overlay"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-obsidian/80 via-transparent to-transparent z-10"></div>
-              
-              <img 
-                src="/physio-1.jpg" 
-                alt="Health Insights" 
-                className="w-full h-full object-cover object-center"
-              />
-              
-              <div className="absolute bottom-0 left-0 p-8 z-20 hidden md:block">
-                <h3 className="text-white text-3xl font-black uppercase tracking-tight mb-2">
-                  Stay <br/><span className="text-brand-green">Informed.</span>
-                </h3>
-                <p className="text-white/80 text-sm font-light leading-relaxed max-w-[250px]">
-                  Expert rehab guidance and wellness tips delivered straight to your inbox.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Form Section */}
-            <div className="w-full md:w-1/2 p-8 sm:p-12 flex flex-col justify-center relative">
+            {/* Modal Content - Centered firmly inside the circular area */}
+            <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[320px]">
               
               <AnimatePresence mode="wait">
                 {!isSuccess ? (
                   <motion.div 
                     key="form"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="flex flex-col items-center md:items-start"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex flex-col items-center w-full"
                   >
                     {/* Logo Area */}
-                    <div className="mb-8 h-8 flex items-center justify-center md:justify-start w-full">
+                    <div className="mb-6 h-10 flex items-center justify-center w-full">
                        <img 
                          src="/logo-transparent.png" 
                          alt="Beach Health Logo" 
@@ -98,32 +104,32 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                        />
                     </div>
 
-                    <p className="text-center md:text-left text-slate-500 text-[15px] leading-relaxed mb-8">
+                    <p className="text-center text-slate-600 text-[14px] font-medium leading-relaxed mb-6">
                       Join our newsletter for health insights, rehab guidance, and wellness tips — plus, be entered into our monthly draw.
                     </p>
 
-                    <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit}>
+                    <form className="w-full flex flex-col gap-3" onSubmit={handleSubmit}>
+                      
+                      <div className="relative">
+                        <input
+                          type="email"
+                          placeholder="Email address"
+                          required
+                          className="w-full bg-white border border-slate-200 px-5 py-3.5 rounded-full outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-[14px] shadow-sm transition-all focus:ring-2 focus:ring-brand-green/20"
+                        />
+                      </div>
                       
                       <div className="relative">
                         <input
                           type="text"
                           placeholder="Full Name"
                           required
-                          className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-2xl outline-none focus:border-brand-green focus:bg-white text-brand-obsidian placeholder:text-slate-400 text-[15px] shadow-sm transition-all"
-                        />
-                      </div>
-
-                      <div className="relative">
-                        <input
-                          type="email"
-                          placeholder="Email address"
-                          required
-                          className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-2xl outline-none focus:border-brand-green focus:bg-white text-brand-obsidian placeholder:text-slate-400 text-[15px] shadow-sm transition-all"
+                          className="w-full bg-white border border-slate-200 px-5 py-3.5 rounded-full outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-[14px] shadow-sm transition-all focus:ring-2 focus:ring-brand-green/20"
                         />
                       </div>
                       
-                      <div className="flex bg-slate-50 border border-slate-200 rounded-2xl shadow-sm focus-within:border-brand-green focus-within:bg-white overflow-hidden transition-all">
-                        <select className="bg-transparent pl-6 pr-2 py-4 text-[15px] text-slate-500 border-r border-slate-200 outline-none cursor-pointer appearance-none font-medium">
+                      <div className="flex bg-white border border-slate-200 rounded-full shadow-sm focus-within:border-brand-green focus-within:ring-2 focus-within:ring-brand-green/20 overflow-hidden transition-all">
+                        <select className="bg-transparent pl-5 pr-2 py-3.5 text-[14px] text-slate-500 border-r border-slate-200 outline-none cursor-pointer appearance-none font-medium">
                           <option value="US">US +1 ⌄</option>
                           <option value="CA">CA +1 ⌄</option>
                         </select>
@@ -131,14 +137,14 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                           type="tel"
                           placeholder="Phone number"
                           required
-                          className="w-full bg-transparent px-4 py-4 outline-none text-brand-obsidian placeholder:text-slate-400 text-[15px]"
+                          className="w-full bg-transparent px-4 py-3.5 outline-none text-brand-obsidian placeholder:text-slate-400 text-[14px]"
                         />
                       </div>
 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full mt-4 bg-brand-green text-white py-4 rounded-2xl font-bold uppercase tracking-[0.1em] text-[13px] hover:bg-[#0284c7] transition-all shadow-lg shadow-brand-green/30 hover:shadow-brand-green/50 active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2"
+                        className="w-full mt-2 bg-brand-green text-white py-4 rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-[#0284c7] transition-all shadow-lg shadow-brand-green/30 hover:shadow-brand-green/50 active:translate-y-0.5 disabled:opacity-70 flex items-center justify-center gap-2"
                       >
                         {isSubmitting ? (
                           <motion.div 
@@ -157,7 +163,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                     key="success"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center text-center py-10 h-full"
+                    className="flex flex-col items-center justify-center text-center py-10"
                   >
                     <div className="w-20 h-20 bg-green-50 text-brand-green rounded-full flex items-center justify-center mb-6">
                       <CheckCircle2 size={40} />
