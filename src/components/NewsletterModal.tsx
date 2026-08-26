@@ -10,101 +10,96 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           
-          {/* Backdrop */}
+          {/* Backdrop with elegant blur */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
             onClick={onClose}
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-brand-obsidian/40 backdrop-blur-md"
           />
 
-          {/* Modal Container */}
+          {/* Animated Glow Behind Modal */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute w-[120%] max-w-[600px] h-[120%] max-h-[600px] bg-gradient-to-tr from-brand-green/30 via-white/10 to-sky-300/30 blur-[80px] rounded-full pointer-events-none"
+          />
+
+          {/* Premium Modal Content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: "spring", duration: 0.6, bounce: 0.4 }}
-            className="relative flex items-center justify-center z-10 w-full max-w-[600px] aspect-square"
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", duration: 0.6, bounce: 0.3 }}
+            className="relative w-full max-w-md bg-white/95 backdrop-blur-2xl rounded-[2.5rem] p-8 sm:p-10 shadow-[0_20px_60px_-15px_rgba(0,144,212,0.15)] border border-white/50 z-10 flex flex-col items-center overflow-hidden"
           >
-            {/* Wavy Blob Background - Perfectly centered and scaled */}
-            <div className="absolute inset-0 w-full h-full text-[#F0F6FA] drop-shadow-2xl flex items-center justify-center">
-              <svg 
-                viewBox="0 0 200 200" 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="w-full h-full fill-current" 
-                preserveAspectRatio="none"
-              >
-                <path 
-                  d="M45.7,-76.3C58.9,-69.3,69.1,-55.3,77.7,-40.4C86.3,-25.5,93.4,-9.7,92.2,5.7C91,21.1,81.5,36,70.1,47.4C58.7,58.8,45.4,66.7,30.8,72.6C16.2,78.5,0.3,82.4,-15.1,80.1C-30.5,77.8,-45.4,69.3,-57.4,57.7C-69.4,46.1,-78.5,31.4,-82.9,15.2C-87.3,-1,-87,-18.7,-79.8,-33.5C-72.6,-48.3,-58.5,-60.2,-43.3,-66.8C-28.1,-73.4,-14.1,-74.7,1.4,-76.8C16.9,-78.9,32.5,-83.3,45.7,-76.3Z" 
-                  transform="translate(100 100) scale(1.05)" 
-                />
-              </svg>
-            </div>
+            {/* Soft decorative accent line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-1.5 bg-gradient-to-r from-transparent via-brand-green to-transparent opacity-80" />
 
             {/* Close Button */}
             <button 
               onClick={onClose}
-              className="absolute top-[12%] right-[12%] text-slate-400 hover:text-brand-obsidian transition-colors z-20 bg-white/60 backdrop-blur-md rounded-full p-2 hover:bg-white shadow-sm"
+              className="absolute top-6 right-6 text-slate-400 hover:text-brand-obsidian transition-colors z-20 bg-slate-50 hover:bg-slate-100 rounded-full p-2"
             >
               <X size={20} strokeWidth={2} />
             </button>
 
-            {/* Modal Content - Constrained to inner safe area of the blob */}
-            <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[340px] mt-4">
+            {/* Logo Area */}
+            <div className="mb-8 mt-2 h-9 flex items-center justify-center w-full">
+               <img 
+                 src="/logo-transparent.png" 
+                 alt="Beach Health Logo" 
+                 className="h-full w-auto object-contain"
+               />
+            </div>
+
+            <p className="text-center text-slate-600 text-[15px] leading-relaxed mb-8 max-w-[300px]">
+              Join our newsletter for health insights, rehab guidance, and wellness tips — plus, be entered into our monthly draw.
+            </p>
+
+            <form className="w-full flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
               
-              {/* Logo Area */}
-              <div className="mb-6 h-10 flex items-center justify-center w-full">
-                 <img 
-                   src="/logo-transparent.png" 
-                   alt="Beach Health Logo" 
-                   className="h-full w-auto object-contain"
-                 />
+              <input
+                type="email"
+                placeholder="Email address"
+                required
+                className="w-full bg-slate-50/50 border border-slate-100 px-6 py-4 rounded-full outline-none focus:border-brand-green focus:bg-white text-brand-obsidian placeholder:text-slate-400 text-[15px] shadow-sm transition-all"
+              />
+              
+              <input
+                type="text"
+                placeholder="Full Name"
+                required
+                className="w-full bg-slate-50/50 border border-slate-100 px-6 py-4 rounded-full outline-none focus:border-brand-green focus:bg-white text-brand-obsidian placeholder:text-slate-400 text-[15px] shadow-sm transition-all"
+              />
+              
+              <div className="flex bg-slate-50/50 border border-slate-100 rounded-full shadow-sm focus-within:border-brand-green focus-within:bg-white overflow-hidden transition-all">
+                <select className="bg-transparent pl-6 pr-2 py-4 text-[15px] text-slate-500 border-r border-slate-100 outline-none cursor-pointer appearance-none">
+                  <option value="US">US +1 ⌄</option>
+                  <option value="CA">CA +1 ⌄</option>
+                </select>
+                <input
+                  type="tel"
+                  placeholder="Phone number"
+                  required
+                  className="w-full bg-transparent px-4 py-4 outline-none text-brand-obsidian placeholder:text-slate-400 text-[15px]"
+                />
               </div>
 
-              <p className="text-center text-slate-600 text-[14px] font-medium leading-relaxed mb-6">
-                Join our newsletter for health insights, rehab guidance, and wellness tips — plus, be entered into our monthly draw.
-              </p>
+              <button
+                type="submit"
+                className="w-full mt-4 bg-brand-green text-white py-4 rounded-full font-bold uppercase tracking-[0.1em] text-[13px] hover:bg-[#0284c7] transition-all shadow-lg shadow-brand-green/30 hover:shadow-brand-green/50 active:scale-[0.98]"
+              >
+                Continue
+              </button>
+            </form>
 
-              <form className="w-full flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
-                
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  required
-                  className="w-full bg-white border border-slate-100 px-5 py-3.5 rounded-full outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-[14px] shadow-sm transition-shadow hover:shadow-md focus:shadow-md focus:ring-2 focus:ring-brand-green/20"
-                />
-                
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  required
-                  className="w-full bg-white border border-slate-100 px-5 py-3.5 rounded-full outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-[14px] shadow-sm transition-shadow hover:shadow-md focus:shadow-md focus:ring-2 focus:ring-brand-green/20"
-                />
-                
-                <div className="flex bg-white border border-slate-100 rounded-full shadow-sm focus-within:border-brand-green focus-within:shadow-md focus-within:ring-2 focus-within:ring-brand-green/20 overflow-hidden transition-shadow hover:shadow-md">
-                  <select className="bg-transparent pl-5 pr-2 py-3.5 text-[14px] text-slate-500 border-r border-slate-100 outline-none cursor-pointer appearance-none font-medium">
-                    <option value="US">US +1 ⌄</option>
-                    <option value="CA">CA +1 ⌄</option>
-                  </select>
-                  <input
-                    type="tel"
-                    placeholder="Phone number"
-                    required
-                    className="w-full bg-transparent px-4 py-3.5 outline-none text-brand-obsidian placeholder:text-slate-400 text-[14px]"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full mt-3 bg-brand-green text-white py-4 rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-brand-green-hover transition-all shadow-lg shadow-brand-green/30 hover:shadow-brand-green/50 hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  Continue
-                </button>
-              </form>
-            </div>
           </motion.div>
         </div>
       )}
