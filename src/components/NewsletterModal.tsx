@@ -18,7 +18,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
           />
 
           {/* Modal Content */}
@@ -27,19 +27,18 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-            className="relative w-full max-w-md bg-[#F4F4F0] rounded-[2.5rem] p-8 md:p-12 shadow-2xl z-10 flex flex-col items-center"
-            style={{ backgroundImage: "radial-gradient(circle at center, #fbfbf9 0%, #f4f4f0 100%)" }}
+            className="relative w-full max-w-md bg-[#F8F9F8] rounded-[3rem] p-8 md:p-10 shadow-2xl z-10 flex flex-col items-center"
           >
             {/* Close Button */}
             <button 
               onClick={onClose}
               className="absolute top-6 right-6 text-slate-400 hover:text-brand-obsidian transition-colors"
             >
-              <X size={24} />
+              <X size={24} strokeWidth={1.5} />
             </button>
 
             {/* Logo Area */}
-            <div className="mb-6 h-12 flex items-center justify-center">
+            <div className="mb-8 mt-2 h-8 flex items-center justify-center w-full">
                <img 
                  src="/logo-transparent.png" 
                  alt="Beach Health Logo" 
@@ -47,42 +46,42 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                />
             </div>
 
-            <p className="text-center text-slate-600 text-sm md:text-base leading-relaxed mb-8 max-w-xs">
+            <p className="text-center text-[#5C6B7A] text-[15px] leading-relaxed mb-8 max-w-[280px]">
               Join our newsletter for health insights, rehab guidance, and wellness tips — plus, be entered into our monthly draw.
             </p>
 
-            <form className="w-full flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
+            <form className="w-full flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
               
               <input
                 type="email"
                 placeholder="Email address"
                 required
-                className="w-full bg-white border border-slate-200 px-5 py-3.5 rounded-full outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm shadow-sm"
+                className="w-full bg-white border border-slate-100 px-6 py-4 rounded-full outline-none focus:border-brand-green text-brand-obsidian placeholder:text-[#8E9CA8] text-[15px] shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)] focus:shadow-[0_4px_12px_-4px_rgba(0,144,212,0.15)]"
               />
               
               <input
                 type="text"
                 placeholder="Full Name"
                 required
-                className="w-full bg-white border border-slate-200 px-5 py-3.5 rounded-full outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm shadow-sm"
+                className="w-full bg-white border border-slate-100 px-6 py-4 rounded-full outline-none focus:border-brand-green text-brand-obsidian placeholder:text-[#8E9CA8] text-[15px] shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)] focus:shadow-[0_4px_12px_-4px_rgba(0,144,212,0.15)]"
               />
               
-              <div className="flex bg-white border border-slate-200 rounded-full shadow-sm focus-within:border-brand-green focus-within:ring-1 focus-within:ring-brand-green overflow-hidden">
-                <select className="bg-transparent pl-5 pr-2 py-3.5 text-sm text-slate-600 border-r border-slate-200 outline-none cursor-pointer">
-                  <option value="US">US +1</option>
-                  <option value="CA">CA +1</option>
+              <div className="flex bg-white border border-slate-100 rounded-full shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] focus-within:border-brand-green focus-within:shadow-[0_4px_12px_-4px_rgba(0,144,212,0.15)] overflow-hidden transition-shadow hover:shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)]">
+                <select className="bg-transparent pl-6 pr-2 py-4 text-[15px] text-[#475569] border-r border-slate-100 outline-none cursor-pointer appearance-none">
+                  <option value="US">US +1 ⌄</option>
+                  <option value="CA">CA +1 ⌄</option>
                 </select>
                 <input
                   type="tel"
                   placeholder="Phone number"
                   required
-                  className="w-full bg-transparent px-4 py-3.5 outline-none text-brand-obsidian placeholder:text-slate-400 text-sm"
+                  className="w-full bg-transparent px-4 py-4 outline-none text-brand-obsidian placeholder:text-[#8E9CA8] text-[15px]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full mt-2 bg-brand-green text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-obsidian transition-colors shadow-lg shadow-brand-green/20"
+                className="w-full mt-4 bg-brand-green text-white py-4 rounded-full font-bold uppercase tracking-[0.1em] text-[13px] hover:bg-brand-green-hover transition-all shadow-[0_8px_20px_-6px_rgba(0,144,212,0.4)] hover:shadow-[0_10px_25px_-6px_rgba(0,144,212,0.5)] active:scale-[0.98]"
               >
                 Continue
               </button>
