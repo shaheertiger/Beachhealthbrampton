@@ -70,8 +70,8 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                 xmlns="http://www.w3.org/2000/svg" 
                 className="w-full h-full fill-current"
               >
-                {/* cx=250, cy=250, radius=230, scallops=24, depth=12 */}
-                <path d={generateRosettePath(250, 250, 225, 24, 12)} />
+                {/* cx=250, cy=250, radius=225, scallops=14, depth=16 */}
+                <path d={generateRosettePath(250, 250, 225, 14, 16)} />
               </svg>
             </div>
 
