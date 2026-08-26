@@ -37,14 +37,14 @@ const services = [
 const getCardStyle = (index: number) => {
   const col = index % 3;
   if (col === 0) return "rounded-tl-[5rem] rounded-tr-3xl rounded-bl-3xl rounded-br-3xl bg-white border border-slate-100 shadow-sm hover:shadow-md";
-  if (col === 1) return "rounded-t-[6rem] rounded-b-3xl bg-[#FFF6EF] border border-[#FDECE2] shadow-sm hover:shadow-md";
+  if (col === 1) return "rounded-t-[6rem] rounded-b-3xl bg-brand-green/5 border border-brand-green/10 shadow-sm hover:shadow-md";
   return "rounded-tr-[5rem] rounded-tl-3xl rounded-bl-3xl rounded-br-3xl bg-white border border-slate-100 shadow-sm hover:shadow-md";
 };
 
 const getIconStyle = (index: number) => {
   const col = index % 3;
-  if (col === 1) return "bg-[#F2A679] text-white";
-  return "bg-[#EAF9F1] text-brand-green"; 
+  if (col === 1) return "bg-brand-green text-white shadow-[0_4px_12px_-4px_rgba(0,144,212,0.4)]";
+  return "bg-brand-green/10 text-brand-green"; 
 };
 
 export default function Therapies() {
