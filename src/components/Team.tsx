@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 
 const teamMembers = [
-  { name: 'Gloria R. Pruitt', role: 'Physiotherapist', image: '/team-1.png' },
-  { name: 'Gracie M. Rush', role: 'Chiropractor', image: '/team-2.png' },
-  { name: 'Andrea J. Cook', role: 'Massage Therapist', image: '/team-3.png' },
-  { name: 'Sarah T. Morse', role: 'Sports Specialist', image: '/team-4.png' },
+  { name: 'Shreya Parekh', role: 'Physiotherapist', image: '' },
+  { name: 'Akansha Bhadane', role: 'Physiotherapist', image: '' },
+  { name: 'Dr. Guramritpal Aujla', role: 'Chiropractor', image: '' },
 ];
 
 export default function Team() {
@@ -20,8 +19,8 @@ export default function Team() {
           </h2>
         </div>
 
-        {/* Team Grid — single column on mobile, 2 on sm, 4 on lg */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Team Grid — single column on mobile, 3 on md */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}

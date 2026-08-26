@@ -1,39 +1,79 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 export default function Contact() {
   return (
     <div className="pt-28 pb-16 bg-bg-base min-h-screen">
 
       {/* Page Header */}
-      <div className="w-full max-w-4xl mx-auto px-4 text-center mb-12">
+      <div className="w-full max-w-6xl mx-auto px-4 text-center mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-obsidian mb-5 leading-tight tracking-tight">
-            Initiate <span className="text-brand-green">Recovery.</span>
+            How can we help you?
           </h1>
           <p className="text-slate-500 max-w-xl mx-auto text-base font-light leading-relaxed">
-            Ready to start your journey? Reach out to our Brampton clinic to book a comprehensive biomechanical assessment.
+            Please fill out the form and our team will contact you as soon as possible.
           </p>
         </motion.div>
       </div>
 
-      <div className="w-full max-w-4xl mx-auto px-4 flex flex-col gap-6">
+      <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-        {/* Contact Form */}
+        {/* Left Side: Contact Details & Map */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
+          className="flex flex-col gap-6"
+        >
+          {/* Phone Card */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-brand-obsidian mb-2">Request Appointment</h3>
+              <p className="text-slate-600 text-lg">905-595-3480</p>
+            </div>
+            <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center flex-shrink-0">
+              <Phone size={28} />
+            </div>
+          </div>
+
+          {/* Email Card */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-brand-obsidian mb-2">Email Us</h3>
+              <p className="text-slate-600 text-lg">brampton@bpwi.ca</p>
+            </div>
+            <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center flex-shrink-0 relative">
+              <Mail size={28} />
+            </div>
+          </div>
+
+          {/* Map */}
+          <div className="bg-white rounded-3xl p-2 border border-slate-200 shadow-sm overflow-hidden h-80">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.634674712411!2d-79.7188734234057!3d43.65574575091763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3fc28a7e4bdf%3A0xc6651811e592df80!2sBrampton%20Physiotherapy%20%2B%20Wellness%20Institute!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0, borderRadius: '1rem' }} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </motion.div>
+
+        {/* Right Side: Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
           className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm"
         >
-          <h3 className="text-xl font-bold text-brand-obsidian uppercase tracking-wide mb-6">
-            Direct Inquiry
-          </h3>
-          <form className="flex flex-col gap-5">
+          <form className="flex flex-col gap-5 h-full justify-between">
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
               <input
@@ -63,7 +103,7 @@ export default function Contact() {
               <textarea
                 rows={4}
                 placeholder="How can we help you?"
-                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm resize-none"
+                className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm resize-none flex-grow"
               />
             </div>
             
@@ -78,56 +118,11 @@ export default function Contact() {
 
             <button
               type="button"
-              className="bg-brand-obsidian text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-brand-green transition-colors"
+              className="mt-2 bg-brand-obsidian text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-brand-green transition-colors"
             >
-              Transmit Message
+              Send
             </button>
           </form>
-        </motion.div>
-
-        {/* Contact Details */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm"
-        >
-          <h3 className="text-xl font-bold text-brand-obsidian uppercase tracking-wide mb-6">
-            Coordinates
-          </h3>
-          <div className="flex flex-col gap-5">
-            {[
-              { Icon: MapPin, label: 'Headquarters', value: '123 Health Ave, Brampton, ON' },
-              { Icon: Phone, label: 'Direct Line', value: '(905) 555-0123' },
-              { Icon: Mail, label: 'Electronic Mail', value: 'hello@beachhealth.com' },
-            ].map(({ Icon, label, value }) => (
-              <div key={label} className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
-                  <Icon size={18} className="text-brand-green" />
-                </div>
-                <div>
-                  <p className="font-bold text-sm text-brand-obsidian">{label}</p>
-                  <p className="text-slate-500 text-sm">{value}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Priority Booking */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm text-center"
-        >
-          <h3 className="text-xl font-bold text-brand-obsidian uppercase tracking-wide mb-2">
-            Priority Booking
-          </h3>
-          <p className="text-slate-500 text-sm mb-6">Skip the queue. Secure your assessment online instantly.</p>
-          <button className="w-full border-2 border-brand-obsidian text-brand-obsidian py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-brand-obsidian hover:text-white transition-colors">
-            Access Booking Portal
-          </button>
         </motion.div>
 
       </div>

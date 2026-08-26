@@ -1,19 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import NewsletterModal from './NewsletterModal';
 
 export default function Footer() {
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+
   return (
-    <footer className="bg-bg-base border-t border-zinc-200 pt-20 pb-10 px-8 text-sm">
+    <footer className="bg-bg-base border-t border-zinc-200 pt-20 pb-10 px-8 text-sm relative">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         
         {/* Left Column: Links */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
           <h4 className="text-brand-obsidian font-bold uppercase tracking-widest mb-2">Links</h4>
-          <Link to="/" className="text-slate-500 hover:text-brand-obsidian transition-colors">Our Space</Link>
-          <Link to="/therapies" className="text-slate-500 hover:text-brand-obsidian transition-colors">What We Offer</Link>
-          <Link to="/about" className="text-slate-500 hover:text-brand-obsidian transition-colors">Who We Are</Link>
-          <Link to="/contact" className="text-slate-500 hover:text-brand-obsidian transition-colors">Join The Team</Link>
-          <Link to="#" className="text-slate-500 hover:text-brand-obsidian transition-colors">FAQs</Link>
-          <Link to="/contact" className="text-slate-500 hover:text-brand-obsidian transition-colors">Contact</Link>
+          <Link to="/" className="text-slate-500 hover:text-brand-obsidian transition-colors">About Us</Link>
+          <Link to="/about" className="text-slate-500 hover:text-brand-obsidian transition-colors">Our Team</Link>
+          <Link to="/contact" className="text-slate-500 hover:text-brand-obsidian transition-colors">Contact Us</Link>
         </div>
 
         {/* Center Column: Logo & Newsletter */}
@@ -25,7 +26,10 @@ export default function Footer() {
               className="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
             />
           </Link>
-          <button className="text-brand-green font-bold uppercase tracking-widest hover:text-brand-obsidian transition-colors">
+          <button 
+            onClick={() => setIsNewsletterOpen(true)}
+            className="text-brand-green font-bold uppercase tracking-widest hover:text-brand-obsidian transition-colors"
+          >
             Join Our Newsletter
           </button>
         </div>
@@ -46,9 +50,9 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="font-bold text-brand-obsidian text-sm uppercase hover:text-brand-green transition-colors inline-block"
             >
-              Toronto Clinic &rarr;
+              Toronto Clinic
             </a>
-            <p className="text-slate-500 text-xs mt-1">1574 Kingston Road,<br />Toronto, ON M1N 1S2</p>
+            <p className="text-slate-500 text-xs mt-1">350 Beech Avenue<br />Toronto, ON M4E 3T8</p>
           </div>
 
         </div>
@@ -58,6 +62,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center text-slate-500 text-xs gap-4 pt-8 border-t border-zinc-200">
         <p>&copy; {new Date().getFullYear()} Beach Health Clinic | <Link to="/privacy-policy" className="hover:text-brand-green transition-colors">Privacy Policy</Link> | Terms of Service</p>
       </div>
+
+      <NewsletterModal 
+        isOpen={isNewsletterOpen} 
+        onClose={() => setIsNewsletterOpen(false)} 
+      />
     </footer>
   );
 }
