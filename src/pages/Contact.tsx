@@ -73,11 +73,17 @@ export default function Contact() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm"
         >
-          <form className="flex flex-col gap-5 h-full justify-between">
+          <form action="https://formsubmit.co/brampton@bpwi.ca" method="POST" className="flex flex-col gap-5 h-full justify-between">
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="New Website Contact Form Submission" />
+            <input type="hidden" name="_captcha" value="false" />
+            
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
               <input
                 type="text"
+                name="name"
+                required
                 placeholder="John Doe"
                 className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
@@ -86,6 +92,8 @@ export default function Contact() {
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Email Address</label>
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="john@example.com"
                 className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
@@ -94,6 +102,7 @@ export default function Contact() {
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Phone Number (For SMS)</label>
               <input
                 type="tel"
+                name="phone"
                 placeholder="(905) 555-0199"
                 className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
@@ -101,6 +110,8 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Message</label>
               <textarea
+                name="message"
+                required
                 rows={4}
                 placeholder="How can we help you?"
                 className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm resize-none flex-grow"
@@ -109,7 +120,7 @@ export default function Contact() {
             
             <div className="flex flex-col gap-2 mt-2">
               <label className="flex items-start gap-3 cursor-pointer">
-                <input type="checkbox" className="mt-1 w-4 h-4 text-brand-green bg-slate-50 border-slate-300 rounded focus:ring-brand-green" required />
+                <input type="checkbox" name="sms_consent" value="yes" className="mt-1 w-4 h-4 text-brand-green bg-slate-50 border-slate-300 rounded focus:ring-brand-green" required />
                 <span className="text-xs text-slate-500 leading-relaxed">
                   By providing my phone number, I consent to receive SMS text messages from Beach Health. I understand that my personal info will not be shared with third parties for marketing purposes, message frequency varies, and I can reply STOP to opt-out or HELP for more info. Message & data rates may apply. <a href="/privacy-policy" className="text-brand-green hover:underline">Read Privacy Policy</a>.
                 </span>
@@ -117,10 +128,10 @@ export default function Contact() {
             </div>
 
             <button
-              type="button"
+              type="submit"
               className="mt-2 bg-brand-obsidian text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-brand-green transition-colors"
             >
-              Send
+              Send Message
             </button>
           </form>
         </motion.div>
