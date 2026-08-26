@@ -35,10 +35,11 @@ const features: Feature[] = [
   },
   {
     title: "Optimize Your Movement",
-    description: "Unlock the potential for a life in full motion with personalized assessment and treatment plans to optimize function and performance.",
+    description: "Whether you're recovering, training, or just want to move better, we build a personalized plan around you. And because comfort matters, we offer chiropractic adjusting style which is best for you. Manual adjustments use precise hands-on movements to free stuck joints and restore motion. Drop-table uses a gentle table \"drop\" to deliver targeted corrections with less force. Activator Methods® instrument adjusting is a low-force, handheld tool that's quiet, precise, and ideal if you prefer very gentle care.\n\nNot sure which is right for you? We'll figure it out together at your first visit.",
     image: "/chiro-2.jpg",
     reversed: false,
-    imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl"
+    imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl",
+    button: { text: "Book a chiropractic assessment", link: "https://beachealth.janeapp.com/" }
   }
 ];
 
