@@ -1,13 +1,29 @@
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 
-const features = [
+type Feature = {
+  title: string;
+  subtitle?: string;
+  description: string;
+  image: string;
+  reversed: boolean;
+  imageStyle: string;
+  button?: { text: string; link: string };
+  footerText?: string;
+  renderTitleNormal?: boolean;
+}
+
+const features: Feature[] = [
   {
-    title: "Restore Your Wellbeing",
-    description: "We're here to support and empower you on your path to recovery or improvement, ensuring that your treatment plan is as individual as you are.",
+    title: "Physiotherapy & Chiropractic Care in Brampton",
+    subtitle: "One coordinated team, under one roof.",
+    description: "At Beachealth Brampton, our physiotherapists and chiropractors work together not in silos. We combine precise manual adjustments with advanced techniques like shockwave therapy, and we actually talk to each other about your care: sharing findings, coordinating treatment, and adapting as we see what's working.",
     image: "/physio-2.jpg",
     reversed: false,
-    imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl"
+    imageStyle: "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-xl rounded-br-xl",
+    button: { text: "Book Online", link: "https://beachealth.janeapp.com/" },
+    footerText: "Direct billing available · No referral needed · New patients welcome",
+    renderTitleNormal: true
   },
   {
     title: "Overcome Your Pain",
@@ -71,18 +87,48 @@ export default function Features() {
               {/* Green Divider Line */}
               <div className="w-16 h-1 bg-brand-green mb-2"></div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight break-words">
-                {feature.title.split(' ').map((word, i) => (
-                  <span key={i} className={word === "Your" ? "text-brand-green block my-1" : "block"}>
-                    {word}
-                  </span>
-                ))}
-              </h2>
+              {feature.renderTitleNormal ? (
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-obsidian leading-[1.1] tracking-tight">
+                  {feature.title}
+                </h2>
+              ) : (
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-obsidian uppercase leading-[1.1] tracking-tight break-words">
+                  {feature.title.split(' ').map((word, i) => (
+                    <span key={i} className={word === "Your" ? "text-brand-green block my-1" : "block"}>
+                      {word}
+                    </span>
+                  ))}
+                </h2>
+              )}
+
+              {feature.subtitle && (
+                <h3 className="text-xl md:text-2xl font-medium text-brand-obsidian mt-2">
+                  {feature.subtitle}
+                </h3>
+              )}
               
               <p className="text-lg leading-relaxed text-slate-500 font-light max-w-lg mt-4">
                 {feature.description}
               </p>
-              
+
+              {feature.button && (
+                <div className="mt-4 flex flex-col items-start gap-4">
+                  <a href={feature.button.link} target="_blank" rel="noopener noreferrer">
+                    <motion.button 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50 w-full md:w-auto"
+                    >
+                      {feature.button.text}
+                    </motion.button>
+                  </a>
+                  {feature.footerText && (
+                    <span className="text-sm text-slate-500 font-medium max-w-sm">
+                      {feature.footerText}
+                    </span>
+                  )}
+                </div>
+              )}
               
             </motion.div>
 
