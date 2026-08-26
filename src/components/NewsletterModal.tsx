@@ -61,10 +61,10 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", duration: 0.7, bounce: 0.4 }}
-            className="relative flex items-center justify-center z-10 w-[95vw] max-w-[600px] aspect-square"
+            className="relative flex items-center justify-center z-10 w-[115vw] sm:w-[95vw] max-w-[550px] aspect-square flex-shrink-0"
           >
             {/* Scalloped Background SVG (Rosette Badge) */}
-            <div className="absolute inset-0 w-full h-full text-[#FDFBF7] drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex items-center justify-center">
+            <div className="absolute inset-0 w-full h-full text-[#FDFBF7] drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex items-center justify-center pointer-events-none -z-10">
               <svg 
                 viewBox="0 0 500 500" 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -78,13 +78,13 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
             {/* Close Button */}
             <button 
               onClick={onClose}
-              className="absolute top-[12%] right-[12%] text-slate-400 hover:text-brand-obsidian transition-colors z-20 bg-white hover:bg-slate-50 rounded-full p-2 shadow-sm border border-slate-100"
+              className="absolute top-[12%] right-[12%] sm:top-[14%] sm:right-[14%] text-slate-400 hover:text-brand-obsidian transition-colors z-[100] bg-white hover:bg-slate-50 rounded-full p-2.5 shadow-md border border-slate-100 cursor-pointer"
             >
-              <X size={20} strokeWidth={2.5} />
+              <X size={22} strokeWidth={2.5} />
             </button>
 
             {/* Modal Content - Centered firmly inside the circular area */}
-            <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[320px]">
+            <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[280px] sm:max-w-[320px] scale-[0.9] sm:scale-100 mt-2">
               
               <AnimatePresence mode="wait">
                 {!isSuccess ? (
@@ -96,7 +96,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                     className="flex flex-col items-center w-full"
                   >
                     {/* Logo Area */}
-                    <div className="mb-6 h-10 flex items-center justify-center w-full">
+                    <div className="mb-4 sm:mb-6 h-8 sm:h-10 flex items-center justify-center w-full">
                        <img 
                          src="/logo-transparent.png" 
                          alt="Beach Health Logo" 
