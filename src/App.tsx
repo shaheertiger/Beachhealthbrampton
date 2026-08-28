@@ -9,6 +9,8 @@ import Therapies from './pages/Therapies';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import FloatingTextButton from './components/FloatingTextButton';
 
 function ScrollToTop() {
@@ -53,6 +55,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/therapies" element={<Therapies />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>

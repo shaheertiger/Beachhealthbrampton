@@ -14,6 +14,7 @@ export default function Footer() {
           <h4 className="text-brand-obsidian font-bold uppercase tracking-widest mb-2">Links</h4>
           <Link to="/" className="text-slate-500 hover:text-brand-obsidian transition-colors">About Us</Link>
           <Link to="/about" className="text-slate-500 hover:text-brand-obsidian transition-colors">Our Team</Link>
+          <Link to="/blog" className="text-slate-500 hover:text-brand-obsidian transition-colors">Blog</Link>
           <Link to="/contact" className="text-slate-500 hover:text-brand-obsidian transition-colors">Contact Us</Link>
         </div>
 

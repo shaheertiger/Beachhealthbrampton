@@ -28,6 +28,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Our Services', path: '/therapies' },
     { name: 'The Team', path: '/about' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Contact Us', path: '/contact' }
   ];
 
