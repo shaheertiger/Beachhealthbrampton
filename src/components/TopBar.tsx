@@ -13,9 +13,9 @@ export default function TopBar() {
             <span>Unit 7A, 155 Clark Blvd, Brampton, ON L6T 4G6</span>
           </div>
           <span className="hidden md:inline text-slate-300">|</span>
-          <a href="tel:+19055953480" className="flex items-center gap-2 hover:text-brand-green transition-colors">
+          <a href="tel:+14375245161" className="flex items-center gap-2 hover:text-brand-green transition-colors">
             <Phone size={16} className="text-brand-green" />
-            <span>(905) 595-3480</span>
+            <span>(437) 524-5161</span>
           </a>
           <span className="hidden md:inline text-slate-300">|</span>
           <a href="mailto:hello@beachhealth.com" className="flex items-center gap-1.5 hover:text-brand-green transition-colors">
