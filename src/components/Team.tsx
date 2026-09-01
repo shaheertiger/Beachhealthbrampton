@@ -16,7 +16,14 @@ For Shreyakumari, physiotherapy is about more than treating an injury—it is ab
 Outside the clinic, Shreyakumari enjoys travelling, exploring art, and spending time socializing with friends, family, and the people around her. Her genuine empathy, patience, and commitment to her patients are reflected in the personalized care she provides to every individual she works with.` 
   },
   { name: 'Akansha Bhadane', role: 'Physiotherapist', image: '', bio: '' },
-  { name: 'Dr. Guramritpal Aujla', role: 'Chiropractor', image: '', bio: '' },
+  { 
+    name: 'Dr. Guramritpal Aujla', 
+    role: 'Chiropractor', 
+    image: '/dr-aujla.jpeg', 
+    bio: `Dr. Aujla is a chiropractor and a proud graduate of D’Youville University in Buffalo, NY. He is well-versed in a variety of chiropractic treatment techniques, including several forms of spinal and extremity adjustments, Active Release Techniques (ART), personalized exercise and rehabilitation programs, and therapeutic modalities such as shockwave therapy, ultrasound, and cold laser therapy. Dr. Aujla treats a wide range of conditions, from sciatica and migraines to sports injuries, musculoskeletal pain, and everything in between. His approach focuses on individualized, evidence-informed care tailored to each patient’s specific needs and goals.
+
+When he is not in the clinic treating patients, Dr. Aujla can usually be found on the basketball court, in the gym, at the beach, or spending time with friends and family. He looks up to his father, as well as role models like Chris Bumstead and the late Kobe Bryant, whose drive and commitment to excellence inspire him to bring the same energy and dedication to every patient he sees.` 
+  },
 ];
 
 export default function Team() {
