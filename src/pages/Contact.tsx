@@ -34,7 +34,7 @@ export default function Contact() {
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
               <h3 className="text-xl font-bold text-brand-obsidian mb-2">Request Appointment</h3>
-              <p className="text-slate-600 text-lg">905-595-3480</p>
+              <p className="text-slate-600 text-lg">(437) 524-5161</p>
             </div>
             <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center flex-shrink-0">
               <Phone size={28} />
