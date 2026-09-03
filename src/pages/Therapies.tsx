@@ -13,23 +13,18 @@ const services = [
     Icon: HeartPulse,
   },
   { 
-    title: 'Massage Therapy', 
-    desc: 'Relax and rejuvenate with our registered massage therapy',
-    Icon: HandHeart,
-  },
-  { 
     title: 'Pain Management', 
-    desc: 'Take control of pain with our expert pain management solutions',
-    Icon: Stethoscope,
+    desc: 'Take control of pain with our expert pain management solutions.',
+    Icon: Activity,
   },
   { 
     title: 'Custom Orthotics', 
-    desc: 'Step into comfort with custom orthotics.',
+    desc: 'Expertly crafted custom orthotics designed to align your body, alleviate foot pain, and improve your daily movement.',
     Icon: Footprints,
   },
   { 
     title: 'Shockwave Therapy', 
-    desc: 'Accelerate healing and relieve pain with advanced shockwave therapy.',
+    desc: 'Advanced non-invasive shockwave therapy to accelerate the healing of chronic pain and stubborn soft tissue injuries.',
     Icon: Zap,
   },
 ];
@@ -61,7 +56,7 @@ export default function Therapies() {
           className="text-center mb-20"
         >
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-brand-obsidian mb-6 leading-tight tracking-tight">
-            Comprehensive <br/> <span className="text-brand-green">Therapies.</span>
+            Our <br/> <span className="text-brand-green">Services.</span>
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
             We offer a curated range of specialized clinical treatments to address your unique biomechanical needs, engineering a faster and more permanent recovery.
