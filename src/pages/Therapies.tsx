@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Activity, Footprints, Zap, HeartPulse, Stethoscope, HandHeart } from 'lucide-react';
+import { Activity, Footprints, Zap, HeartPulse } from 'lucide-react';
 
 const services = [
   { 
