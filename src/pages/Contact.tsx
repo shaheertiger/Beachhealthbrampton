@@ -73,10 +73,11 @@ export default function Contact() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm"
         >
-          <form action="https://formsubmit.co/hello@beachhealth.com" method="POST" className="flex flex-col gap-5 h-full justify-between">
+          <form action="https://formsubmit.co/hello@beachealth.com" method="POST" className="flex flex-col gap-5 h-full justify-between">
             {/* FormSubmit Configuration */}
-            <input type="hidden" name="_subject" value="New Website Contact Form Submission" />
+            <input type="hidden" name="_subject" value="New Patient Inquiry - Beach Health Brampton" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://beachealth.com/contact" />
             
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Name</label>

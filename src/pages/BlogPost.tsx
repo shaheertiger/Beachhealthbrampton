@@ -91,12 +91,14 @@ export default function BlogPost() {
             <p className="text-slate-500 mb-8 max-w-lg mx-auto">
               If you're dealing with pain or looking to optimize your movement, our expert team is here to help you get back to what you love.
             </p>
-            <Link 
-              to="/contact"
+            <a 
+              href="https://beachealthbr.janeapp.com/login"
+              target="_blank"
+              rel="noreferrer"
               className="inline-block bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 hover:bg-[#0284c7] transition-all shadow-lg shadow-brand-green/30"
             >
               Book An Assessment
-            </Link>
+            </a>
           </div>
         </div>
       </div>
