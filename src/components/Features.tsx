@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-import { Link } from 'react-router-dom';
 
 type Feature = {
   title: string;
