@@ -131,7 +131,6 @@ export default function Navbar() {
                 href="https://beachealthbr.janeapp.com/login" 
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
                 className="bg-brand-green text-white px-8 py-4 rounded-full text-center font-black uppercase tracking-widest shadow-xl shadow-brand-green/30 text-lg w-full max-w-[280px]"
               >
                 Book An Appointment

@@ -116,15 +116,16 @@ export default function Features() {
 
               {feature.button && (
                 <div className="mt-4 flex flex-col items-start gap-4">
-                  <Link to={feature.button.link}>
-                    <motion.button 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50 w-full md:w-auto"
-                    >
-                      {feature.button.text}
-                    </motion.button>
-                  </Link>
+                  <motion.a 
+                    href={feature.button.link} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-block text-center bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50 w-full md:w-auto"
+                  >
+                    {feature.button.text}
+                  </motion.a>
                   {feature.footerText && (
                     <span className="text-sm text-slate-500 font-medium max-w-sm">
                       {feature.footerText}

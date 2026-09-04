@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const reviews = [
-  { name: 'Sarah Jenkins', text: 'Incredible physiotherapy experience. The team in Brampton genuinely cares about your recovery.', rating: 5 },
-  { name: 'David Chen', text: 'Fixed my shoulder pain in just 4 sessions. Highly recommend Beach Health to anyone.', rating: 5 },
-  { name: 'Emma Thompson', text: 'Professional, clean clinic and top-tier therapists. The best biomechanical assessment I have had.', rating: 5 },
-  { name: 'Michael R.', text: 'After my sports injury, I thought I was done for the season. They got me back on the field in weeks.', rating: 5 },
-  { name: 'Jessica L.', text: 'Friendly staff and very knowledgeable. The new Brampton location is beautiful and modern.', rating: 5 },
-  { name: 'Ahmed S.', text: 'Detailed, personalized care. They take the time to actually explain what is going wrong.', rating: 5 }
+  { name: 'Michael T.', text: 'The osteopathy treatments here have completely changed my life. After years of chronic back pain, I finally feel like myself again. The practitioners truly look at the root cause.', rating: 5 },
+  { name: 'Sarah M.', text: 'Incredible multidisciplinary team! I came in for running analysis and physiotherapy, and their integrated approach helped me train for my marathon pain-free.', rating: 5 },
+  { name: 'Jessica L.', text: 'Highly recommend Beach Health. The massage therapists are extremely knowledgeable, and the clinic environment is always spotless, welcoming, and very professional.', rating: 5 },
+  { name: 'David R.', text: 'I have been seeing their chiropractor and physiotherapist for a sports injury. Their communication and customized recovery plan got me back on my feet much faster than expected.', rating: 5 },
+  { name: 'Emily C.', text: 'The best clinical Pilates classes in the city. The instructors pay so much attention to form and detail, making sure you are engaging the right muscles safely.', rating: 5 },
+  { name: 'Mark D.', text: 'From acupuncture to chiropody, this clinic has it all. The convenience of having all my health needs met under one roof by such a caring team is unmatched.', rating: 5 }
 ];
 
 export default function TestimonialsTicker() {
@@ -29,7 +29,7 @@ export default function TestimonialsTicker() {
             <Star size={16} fill="currentColor" />
             <Star size={16} fill="currentColor" />
           </div>
-          <p className="text-slate-500 text-sm">on Google Reviews</p>
+          <p className="text-slate-500 text-sm">Patient Reviews</p>
         </div>
       </div>
 
@@ -47,20 +47,19 @@ export default function TestimonialsTicker() {
           {duplicatedReviews.map((review, idx) => (
             <div 
               key={idx} 
-              className="w-[300px] md:w-[350px] shrink-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="w-[300px] md:w-[350px] shrink-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col"
             >
               <div className="flex items-center gap-1 text-yellow-400 mb-3">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} size={14} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-sm text-slate-600 mb-4 line-clamp-3">"{review.text}"</p>
+              <p className="text-sm text-slate-600 mb-4 line-clamp-4">"{review.text}"</p>
               <div className="flex items-center gap-3 mt-auto">
-                <div className="w-8 h-8 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green font-bold text-xs">
+                <div className="w-8 h-8 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green font-bold text-xs shrink-0">
                   {review.name.charAt(0)}
                 </div>
                 <p className="font-bold text-xs text-brand-obsidian uppercase tracking-wide">{review.name}</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-4 h-4 ml-auto" />
               </div>
             </div>
           ))}

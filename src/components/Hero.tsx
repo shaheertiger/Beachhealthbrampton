@@ -46,15 +46,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="w-full md:w-auto self-start mt-auto md:mt-4 lg:mt-6 flex justify-center md:justify-start"
         >
-          <a href="https://beachealthbr.janeapp.com/login" target="_blank" rel="noreferrer" className="w-full md:w-auto">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50 w-full md:w-auto"
-            >
-              Book An Appointment
-            </motion.button>
-          </a>
+          <motion.a 
+            href="https://beachealthbr.janeapp.com/login" 
+            target="_blank" 
+            rel="noreferrer" 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block text-center bg-brand-green text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-brand-green/20 transition-all border border-brand-green/50 w-full md:w-auto"
+          >
+            Book An Appointment
+          </motion.a>
         </motion.div>
         
       </div>
