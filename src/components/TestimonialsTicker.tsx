@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const reviews = [
-  { name: 'Michael T.', text: 'The osteopathy treatments here have completely changed my life. After years of chronic back pain, I finally feel like myself again. The practitioners truly look at the root cause.', rating: 5 },
-  { name: 'Sarah M.', text: 'Incredible multidisciplinary team! I came in for running analysis and physiotherapy, and their integrated approach helped me train for my marathon pain-free.', rating: 5 },
-  { name: 'Jessica L.', text: 'Highly recommend Beach Health. The massage therapists are extremely knowledgeable, and the clinic environment is always spotless, welcoming, and very professional.', rating: 5 },
-  { name: 'David R.', text: 'I have been seeing their chiropractor and physiotherapist for a sports injury. Their communication and customized recovery plan got me back on my feet much faster than expected.', rating: 5 },
-  { name: 'Emily C.', text: 'The best clinical Pilates classes in the city. The instructors pay so much attention to form and detail, making sure you are engaging the right muscles safely.', rating: 5 },
-  { name: 'Mark D.', text: 'From acupuncture to chiropody, this clinic has it all. The convenience of having all my health needs met under one roof by such a caring team is unmatched.', rating: 5 }
+  { name: 'Jaheed Cesar', text: 'Been going to Emily Tran for my foot issues since the beginning of this year and it’s been a fantastic experience so far. Every visit she does good work and she’s very transparent on the process. Definitely Will keep coming back!', rating: 5 },
+  { name: 'Rick Goodwin', text: "I have been a type 1 diabetic for 36 years. Needless to say, I've had a few foot doctors. Without a doubt, Dr. Lee is the best one I've had. Very skilled and knowledgeable. Rather important if you have diabetes. You could do worse, don't think you could do better.", rating: 5 },
+  { name: 'YURI', text: "December 2025. This is a really nice place, peaceful, uncluttered and full of light. I've only been there for osteopathy so far, and had four treatments with Jared. It was my first experience with osteopathy, and I decided to try it because I was experiencing a lot of pain from carpal tunnel syndrome at least from my elbow down to my wrist. Because the pain was mostly at night, it was hard for me to tell if the treatments were helping or not, even though I found the entire treatment during each session made me feel better overall. Now I realize they are very powerful, and also effective, in the sense that if you pay attention to each area that is being worked on and to Jared's explanations, you can actually identify very closely the best areas to treat. And now after four sessions, I find that I no longer feel any pain at night. My fingers are still numb/tingly , so there's still work to be done for that, but the arm pain is gone and I'm able to sleep. So I'm very grateful to Jared for that, and definitely recommend him for osteopathic treatment. I will be going back.", rating: 5 },
+  { name: 'J.', text: 'Clean facility and welcoming staff!', rating: 5 },
+  { name: 'S. N.', text: 'So glad his new location is still easily accessible by TTC.', rating: 5 },
+  { name: 'A. M.', text: 'The environment is peaceful, the treatment rooms are clean and professional.', rating: 5 }
 ];
 
 export default function TestimonialsTicker() {
