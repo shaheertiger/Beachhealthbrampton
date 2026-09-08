@@ -35,10 +35,12 @@ export default function PrivacyPolicy() {
           We collect personal information that you voluntarily provide to us when you register on the website, express an interest in obtaining information about us or our products and services, or otherwise contact us.
         </p>
 
-        <h2 className="text-2xl font-bold text-brand-obsidian mt-8 mb-4">4. Contact Us</h2>
-        <p className="text-slate-600 mb-6">
-          If you have questions or comments about this Privacy Policy, please contact us at: <a href="mailto:hello@beachhealth.com" className="text-brand-green hover:underline">hello@beachhealth.com</a>
-        </p>
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-brand-obsidian mb-4">9. Contact Us</h2>
+          <p className="text-slate-600 leading-relaxed mb-4">
+          If you have questions or comments about this Privacy Policy, please contact us at: <a href="mailto:info@beachealth.com" className="text-brand-green hover:underline">info@beachealth.com</a>
+          </p>
+        </section>
       </motion.div>
     </div>
   );
