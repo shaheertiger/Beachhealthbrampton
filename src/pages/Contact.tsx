@@ -95,6 +95,8 @@ export default function Contact() {
                 type="email"
                 name="email"
                 required
+                pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                title="Please enter a valid email address (e.g. name@gmail.com)"
                 placeholder="john@example.com"
                 className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
@@ -104,6 +106,9 @@ export default function Contact() {
               <input
                 type="tel"
                 name="phone"
+                required
+                pattern="^(\+?1[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$"
+                title="Please enter a valid 10-digit Canadian phone number (e.g. 416-555-0199)"
                 placeholder="(905) 555-0199"
                 className="bg-slate-50 border border-slate-200 px-5 py-3 rounded-xl outline-none focus:border-brand-green text-brand-obsidian placeholder:text-slate-400 text-sm"
               />
