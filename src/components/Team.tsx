@@ -15,7 +15,18 @@ For Shreyakumari, physiotherapy is about more than treating an injury—it is ab
 
 Outside the clinic, Shreyakumari enjoys travelling, exploring art, and spending time socializing with friends, family, and the people around her. Her genuine empathy, patience, and commitment to her patients are reflected in the personalized care she provides to every individual she works with.` 
   },
-  { name: 'Akansha Bhadane', role: 'Physiotherapist', image: '', bio: '' },
+  { 
+    name: 'Akansha Bhadane', 
+    role: 'Physiotherapist', 
+    image: '/akanksha.jpeg', 
+    bio: `Akanksha is a caring and dedicated physiotherapist who is passionate about helping people feel their best and get back to the activities they love. She believes that every person is unique, and she takes the time to understand each patient’s concerns, goals, and lifestyle in order to provide personalized care.
+
+Akanksha graduated from The Maharaja Sayajirao University of Baroda in 2016 and completed her Diploma in Recreation Therapy from Mohawk College, Hamilton, in 2018. Over the years, she has developed a strong understanding of human movement and body mechanics, along with experience in treating a variety of musculoskeletal conditions.
+
+Her approach to physiotherapy is centered around creating a comfortable and supportive environment where patients feel heard, understood, and confident in their recovery. She enjoys working together with her patients to improve their movement, reduce pain, and help them return to the things that matter most to them.
+
+Outside of work, Akanksha enjoys spending quality time with her family and listening to music. She values the importance of balance, connection, and staying active in everyday life.` 
+  },
   { 
     name: 'Dr. Guramritpal Aujla', 
     role: 'Chiropractor', 
