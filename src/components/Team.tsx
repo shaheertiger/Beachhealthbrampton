@@ -2,7 +2,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 
-const teamMembers = [
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  imageClassName?: string;
+  bio: string;
+};
+
+const teamMembers: TeamMember[] = [
   { 
     name: 'Shreyakumari Parekh', 
     role: 'Physiotherapist', 
@@ -19,6 +27,7 @@ Outside the clinic, Shreyakumari enjoys travelling, exploring art, and spending 
     name: 'Akansha Bhadane', 
     role: 'Physiotherapist', 
     image: '/akanksha.jpeg', 
+    imageClassName: 'object-bottom scale-[1.15] translate-y-3',
     bio: `Akanksha is a caring and dedicated physiotherapist who is passionate about helping people feel their best and get back to the activities they love. She believes that every person is unique, and she takes the time to understand each patient’s concerns, goals, and lifestyle in order to provide personalized care.
 
 Akanksha graduated from The Maharaja Sayajirao University of Baroda in 2016 and completed her Diploma in Recreation Therapy from Mohawk College, Hamilton, in 2018. Over the years, she has developed a strong understanding of human movement and body mechanics, along with experience in treating a variety of musculoskeletal conditions.
@@ -68,7 +77,7 @@ export default function Team() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-center"
+                  className={`w-full h-full object-cover ${member.imageClassName || 'object-center'}`}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src =
                       'https://ui-avatars.com/api/?background=e0f2fe&color=0284c7&bold=true&name=' +
@@ -124,7 +133,7 @@ export default function Team() {
                   <img
                     src={selectedMember.image}
                     alt={selectedMember.name}
-                    className="w-full h-full object-cover object-center"
+                    className={`w-full h-full object-cover ${selectedMember.imageClassName || 'object-center'}`}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         'https://ui-avatars.com/api/?background=e0f2fe&color=0284c7&bold=true&name=' +
