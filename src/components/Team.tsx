@@ -12,16 +12,16 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   { 
-    name: 'Shreyakumari Parekh', 
+    name: 'Shreya Parekh', 
     role: 'Physiotherapist', 
     image: '/shreyakumari-parekh.jpeg',
-    bio: `Shreyakumari Parekh is a Registered Physiotherapist. she is passionate about providing thoughtful, evidence-informed care that helps patients restore movement, build strength, manage pain, and return to the activities that matter most to them. Shreyakumari has a broad clinical interest in musculoskeletal rehabilitation, chronic pain management, neurological rehabilitation, and post-surgical recovery.
+    bio: `Shreya Parekh is a Registered Physiotherapist. she is passionate about providing thoughtful, evidence-informed care that helps patients restore movement, build strength, manage pain, and return to the activities that matter most to them. Shreya has a broad clinical interest in musculoskeletal rehabilitation, chronic pain management, neurological rehabilitation, and post-surgical recovery.
 
-Her approach to care is individualized, compassionate, and goal-oriented. Shreyakumari believes that effective physiotherapy begins with listening. She takes the time to understand each patient’s concerns, lifestyle, challenges, and personal goals, while ensuring they have a clear understanding of their condition and treatment plan. She works collaboratively with her patients to develop treatment strategies that are tailored to their specific needs and designed to support meaningful, lasting progress.
+Her approach to care is individualized, compassionate, and goal-oriented. Shreya believes that effective physiotherapy begins with listening. She takes the time to understand each patient’s concerns, lifestyle, challenges, and personal goals, while ensuring they have a clear understanding of their condition and treatment plan. She works collaboratively with her patients to develop treatment strategies that are tailored to their specific needs and designed to support meaningful, lasting progress.
 
-For Shreyakumari, physiotherapy is about more than treating an injury—it is about helping people get back to living their lives with greater comfort, confidence, and freedom of movement.
+For Shreya, physiotherapy is about more than treating an injury—it is about helping people get back to living their lives with greater comfort, confidence, and freedom of movement.
 
-Outside the clinic, Shreyakumari enjoys travelling, exploring art, and spending time socializing with friends, family, and the people around her. Her genuine empathy, patience, and commitment to her patients are reflected in the personalized care she provides to every individual she works with.` 
+Outside the clinic, Shreya enjoys travelling, exploring art, and spending time socializing with friends, family, and the people around her. Her genuine empathy, patience, and commitment to her patients are reflected in the personalized care she provides to every individual she works with.` 
   },
   { 
     name: 'Akansha Bhadane', 
@@ -37,7 +37,7 @@ Her approach to physiotherapy is centered around creating a comfortable and supp
 Outside of work, Akanksha enjoys spending quality time with her family and listening to music. She values the importance of balance, connection, and staying active in everyday life.` 
   },
   { 
-    name: 'Dr. Guramritpal Aujla', 
+    name: 'Guramritpal (GP) Aujla', 
     role: 'Chiropractor', 
     image: '/dr-aujla.jpeg', 
     bio: `Dr. Aujla is a chiropractor and a proud graduate of D’Youville University in Buffalo, NY. He is well-versed in a variety of chiropractic treatment techniques, including several forms of spinal and extremity adjustments, Active Release Techniques (ART), personalized exercise and rehabilitation programs, and therapeutic modalities such as shockwave therapy, ultrasound, and cold laser therapy. Dr. Aujla treats a wide range of conditions, from sciatica and migraines to sports injuries, musculoskeletal pain, and everything in between. His approach focuses on individualized, evidence-informed care tailored to each patient’s specific needs and goals.
@@ -85,7 +85,7 @@ export default function Team() {
                   }}
                 />
               </div>
-              <h3 className="text-base font-bold text-brand-obsidian uppercase tracking-wide leading-tight mb-1">
+              <h3 className="text-base font-bold text-brand-obsidian tracking-wide leading-tight mb-1">
                 {member.name}
               </h3>
               <p className="text-brand-green text-xs font-semibold uppercase tracking-widest mb-4">
@@ -142,7 +142,7 @@ export default function Team() {
                   />
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <h3 className="text-xl sm:text-2xl font-black text-brand-obsidian uppercase tracking-wide leading-tight mb-1">
+                  <h3 className="text-xl sm:text-2xl font-black text-brand-obsidian tracking-wide leading-tight mb-1">
                     {selectedMember.name}
                   </h3>
                   <p className="text-brand-green text-sm font-semibold uppercase tracking-widest mb-6">
