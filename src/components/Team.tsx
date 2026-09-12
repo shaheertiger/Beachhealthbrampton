@@ -85,7 +85,7 @@ export default function Team() {
                   }}
                 />
               </div>
-              <div className="text-base font-bold text-brand-obsidian lowercase tracking-wide leading-tight mb-1">
+              <div className="text-base font-bold text-brand-obsidian tracking-wide leading-tight mb-1">
                 {member.name}
               </div>
               <p className="text-brand-green text-xs font-semibold uppercase tracking-widest mb-4">
@@ -142,7 +142,7 @@ export default function Team() {
                   />
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <div className="text-xl sm:text-2xl font-black text-brand-obsidian lowercase tracking-wide leading-tight mb-1">
+                  <div className="text-xl sm:text-2xl font-black text-brand-obsidian tracking-wide leading-tight mb-1">
                     {selectedMember.name}
                   </div>
                   <p className="text-brand-green text-sm font-semibold uppercase tracking-widest mb-6">
