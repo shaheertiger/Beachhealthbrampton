@@ -24,7 +24,7 @@ For Shreya, physiotherapy is about more than treating an injury—it is about he
 Outside the clinic, Shreya enjoys travelling, exploring art, and spending time socializing with friends, family, and the people around her. Her genuine empathy, patience, and commitment to her patients are reflected in the personalized care she provides to every individual she works with.` 
   },
   { 
-    name: 'Akansha Bhadane', 
+    name: 'Akanksha Bhadane', 
     role: 'Physiotherapist', 
     image: '/akanksha.jpeg', 
     imageClassName: 'object-bottom scale-[1.15] translate-y-3',
