@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://beachealth.com/sitemap.xml
+Sitemap: https://www.beachealthbrampton.com/sitemap.xml
