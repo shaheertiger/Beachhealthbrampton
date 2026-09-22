@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { blogs } from '../data/blogs';
+import { blogs, blogCategories, formatBlogDate, type BlogCategory } from '../data/blogs';
 import { ChevronRight } from 'lucide-react';
 
 export default function Blog() {
-  const [filter, setFilter] = useState<'All' | 'Physiotherapy' | 'Chiropractic Care'>('All');
+  const [filter, setFilter] = useState<'All' | BlogCategory>('All');
+  const filters: Array<'All' | BlogCategory> = ['All', ...blogCategories];
 
   const filteredBlogs = blogs.filter(blog => filter === 'All' || blog.category === filter);
 
@@ -26,10 +27,10 @@ export default function Blog() {
 
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {['All', 'Physiotherapy', 'Chiropractic Care'].map((category) => (
+          {filters.map((category) => (
             <button
               key={category}
-              onClick={() => setFilter(category as any)}
+              onClick={() => setFilter(category)}
               className={`px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all ${
                 filter === category
                   ? 'bg-brand-green text-white shadow-lg shadow-brand-green/20 border border-brand-green'
@@ -56,6 +57,7 @@ export default function Blog() {
                 <img 
                   src={blog.imageUrl} 
                   alt={blog.title} 
+                  loading={index < 3 ? 'eager' : 'lazy'}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-brand-green uppercase tracking-wider shadow-sm">
@@ -66,7 +68,7 @@ export default function Blog() {
               {/* Content */}
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 text-xs text-slate-400 mb-4 font-medium">
-                  <span>{blog.date}</span>
+                  <span>{formatBlogDate(blog.date)}</span>
                   <span className="w-1 h-1 rounded-full bg-slate-300"></span>
                   <span>{blog.readTime}</span>
                 </div>

@@ -1,8 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
-import { blogs } from '../data/blogs';
+import { blogs, formatBlogDate } from '../data/blogs';
+import { locations, formatAddress, telHref } from '../data/site';
+
+// Turns bare URLs in article text (such as the online booking pages) into links.
+const URL_PATTERN = /(https?:\/\/[^\s]*[^\s.,;:!?)])/;
+
+function linkify(text: string): ReactNode[] {
+  return text.split(URL_PATTERN).map((part, index) =>
+    index % 2 === 1 ? (
+      <a key={index} href={part} target="_blank" rel="noreferrer" className="text-brand-green font-medium hover:underline break-words">
+        {part.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+      </a>
+    ) : part
+  );
+}
+
+const paragraphClass = "text-slate-600 text-[17px] md:text-lg font-light leading-relaxed mb-8";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -56,7 +72,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar size={16} className="text-brand-green" />
-                <span>{blog.date}</span>
+                <time dateTime={blog.date}>{formatBlogDate(blog.date)}</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock size={16} className="text-brand-green" />
@@ -75,11 +91,39 @@ export default function BlogPost() {
           transition={{ duration: 0.6 }}
           className="max-w-none"
         >
-          {blog.content.map((paragraph, index) => (
-            <p key={index} className="text-slate-600 text-[17px] md:text-lg font-light leading-relaxed mb-8">
-              {paragraph}
-            </p>
-          ))}
+          {blog.content.map((block, index) => {
+            if (typeof block === 'string') {
+              return <p key={index} className={paragraphClass}>{linkify(block)}</p>;
+            }
+            if ('heading' in block) {
+              return (
+                <h2 key={index} className="text-xl md:text-2xl font-black text-brand-obsidian leading-tight mt-12 mb-6">
+                  {block.heading}
+                </h2>
+              );
+            }
+            return (
+              <ul key={index} className={`list-disc pl-6 space-y-3 marker:text-brand-green ${paragraphClass}`}>
+                {block.list.map((item) => <li key={item}>{linkify(item)}</li>)}
+              </ul>
+            );
+          })}
+
+          {blog.faqs && (
+            <section className="mt-16">
+              <h2 className="text-xl md:text-2xl font-black text-brand-obsidian leading-tight mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="flex flex-col gap-4">
+                {blog.faqs.map((faq) => (
+                  <div key={faq.question} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 className="text-base md:text-lg font-bold text-brand-obsidian leading-snug mb-3">{faq.question}</h3>
+                    <p className="text-slate-600 font-light leading-relaxed">{linkify(faq.answer)}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </motion.article>
 
         {/* Call to Action Footer */}
@@ -99,6 +143,22 @@ export default function BlogPost() {
             >
               Book An Assessment
             </a>
+
+            {/* Both clinics, so every article tells readers (and crawlers) where to find us */}
+            <div className="mt-10 pt-8 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+              {locations.map((location) => (
+                <div key={location.id}>
+                  <p className="font-bold text-brand-obsidian uppercase tracking-wider">{location.name}</p>
+                  <p className="text-slate-500 mt-1">{formatAddress(location)}</p>
+                  <a href={telHref(location.phone)} className="inline-block text-brand-green font-semibold mt-1 hover:underline">
+                    {location.phone}
+                  </a>
+                </div>
+              ))}
+            </div>
+            <Link to="/locations" className="inline-block mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-green transition-colors">
+              View both locations
+            </Link>
           </div>
         </div>
       </div>

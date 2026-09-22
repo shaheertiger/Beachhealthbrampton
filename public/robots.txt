@@ -1,4 +1,37 @@
+# Beachealth: physiotherapy and chiropractic care with two locations,
+# Beachealth Brampton (155 Clark Blvd, Unit 7A, Brampton, ON) and
+# Beachealth Toronto (350 Beech Ave, Toronto, ON).
+#
+# Search engines and AI assistants are welcome to crawl, index and cite this site.
+# Summary for LLMs: https://www.beachealthbrampton.com/llms.txt
+# Full site content for LLMs: https://www.beachealthbrampton.com/llms-full.txt
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# AI crawlers and assistants, listed explicitly so there is no doubt they are allowed.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: YouBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 Sitemap: https://www.beachealthbrampton.com/sitemap.xml
