@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
         className="prose prose-slate max-w-none prose-h2:text-brand-obsidian prose-h2:mt-12 prose-a:text-brand-green"
       >
         <h1 className="text-3xl md:text-5xl font-black text-brand-obsidian mb-8">Privacy Policy</h1>
-        <p className="text-slate-500 text-lg mb-8">Last Updated: {new Date().toLocaleDateString()}</p>
+        <p className="text-slate-500 text-lg mb-8">Last Updated: September 8, 2026</p>
 
         <h2 className="text-2xl font-bold text-brand-obsidian mt-8 mb-4">1. Introduction</h2>
         <p className="text-slate-600 mb-6">

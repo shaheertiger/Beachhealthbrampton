@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { toronto, formatAddress, telHref } from '../data/site';
 
 export default function Contact() {
   return (
@@ -63,6 +65,21 @@ export default function Contact() {
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade">
             </iframe>
+          </div>
+
+          {/* Toronto Clinic */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex items-center justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-bold text-brand-obsidian mb-2">Also in Toronto</h3>
+              <p className="text-slate-600">{formatAddress(toronto)}</p>
+              <a href={telHref(toronto.phone)} className="text-slate-600 hover:text-brand-green transition-colors">{toronto.phone}</a>
+              <Link to="/locations" className="block mt-3 text-sm font-bold uppercase tracking-widest text-brand-green hover:text-brand-obsidian transition-colors">
+                View both locations
+              </Link>
+            </div>
+            <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center flex-shrink-0">
+              <MapPin size={28} />
+            </div>
           </div>
         </motion.div>
 

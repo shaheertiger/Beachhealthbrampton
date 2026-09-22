@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import TopBar from './components/TopBar';
@@ -11,7 +11,9 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Locations from './pages/Locations';
 import FloatingTextButton from './components/FloatingTextButton';
+import { getPageMeta } from './seo/meta';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,6 +23,22 @@ function ScrollToTop() {
   return null;
 }
 
+// Keeps the tab title and SEO tags current during client-side navigation. Each page's initial
+// values are written into its static HTML at build time (scripts/prerender.mjs).
+function RouteMeta() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const meta = getPageMeta(pathname);
+    if (!meta) return;
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', meta.url);
+  }, [pathname]);
+  return null;
+}
+
+// Rendered inside <BrowserRouter> in the browser (main.tsx) and <StaticRouter> at build time
+// (entry-server.tsx).
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -45,8 +63,9 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
+      <RouteMeta />
       <main className="min-h-screen bg-bg-base font-sans relative overflow-x-hidden selection:bg-brand-green selection:text-white flex flex-col">
         <TopBar />
         <div className="relative flex-grow w-full">
@@ -57,6 +76,7 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/locations" element={<Locations />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
@@ -64,7 +84,7 @@ function App() {
         <Footer />
         <FloatingTextButton />
       </main>
-    </Router>
+    </>
   );
 }
 

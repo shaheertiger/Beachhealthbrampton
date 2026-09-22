@@ -15,6 +15,7 @@ export default function Footer() {
           <Link to="/" className="text-slate-500 hover:text-brand-obsidian transition-colors">About Us</Link>
           <Link to="/about" className="text-slate-500 hover:text-brand-obsidian transition-colors">Our Team</Link>
           <Link to="/blog" className="text-slate-500 hover:text-brand-obsidian transition-colors">Blog</Link>
+          <Link to="/locations" className="text-slate-500 hover:text-brand-obsidian transition-colors">Locations</Link>
           <Link to="/contact" className="text-slate-500 hover:text-brand-obsidian transition-colors">Contact Us</Link>
         </div>
 
