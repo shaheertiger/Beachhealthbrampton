@@ -55,7 +55,7 @@ export default function TestimonialsTicker() {
                   <Star key={i} size={14} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-sm text-slate-600 mb-4 line-clamp-4">"{review.text}"</p>
+              <p className="text-sm text-slate-600 mb-4 whitespace-pre-wrap">"{review.text}"</p>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-8 h-8 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green font-bold text-xs shrink-0">
                   {review.name.charAt(0)}
