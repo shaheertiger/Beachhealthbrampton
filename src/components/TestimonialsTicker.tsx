@@ -2,12 +2,10 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const reviews = [
-  { name: 'Jaheed Cesar', text: 'Been going to Emily Tran for my foot issues since the beginning of this year and it’s been a fantastic experience so far. Every visit she does good work and she’s very transparent on the process. Definitely Will keep coming back!', rating: 5 },
-  { name: 'Rick Goodwin', text: "I have been a type 1 diabetic for 36 years. Needless to say, I've had a few foot doctors. Without a doubt, Dr. Lee is the best one I've had. Very skilled and knowledgeable. Rather important if you have diabetes. You could do worse, don't think you could do better.", rating: 5 },
-  { name: 'YURI', text: "December 2025. This is a really nice place, peaceful, uncluttered and full of light. I've only been there for osteopathy so far, and had four treatments with Jared. It was my first experience with osteopathy, and I decided to try it because I was experiencing a lot of pain from carpal tunnel syndrome at least from my elbow down to my wrist. Because the pain was mostly at night, it was hard for me to tell if the treatments were helping or not, even though I found the entire treatment during each session made me feel better overall. Now I realize they are very powerful, and also effective, in the sense that if you pay attention to each area that is being worked on and to Jared's explanations, you can actually identify very closely the best areas to treat. And now after four sessions, I find that I no longer feel any pain at night. My fingers are still numb/tingly , so there's still work to be done for that, but the arm pain is gone and I'm able to sleep. So I'm very grateful to Jared for that, and definitely recommend him for osteopathic treatment. I will be going back.", rating: 5 },
-  { name: 'J.', text: 'Clean facility and welcoming staff!', rating: 5 },
-  { name: 'S. N.', text: 'So glad his new location is still easily accessible by TTC.', rating: 5 },
-  { name: 'A. M.', text: 'The environment is peaceful, the treatment rooms are clean and professional.', rating: 5 }
+  { name: 'Almz Quiambao', text: 'Shreya is good,gentle in massage and very nice.', rating: 5 },
+  { name: 'Abhishek Jain', text: 'I am so pleased to see a Beachealth location in Brampton, bringing the care and professionalism you only get to see in Toronto (they have another location in Scarborough). The staff is welcoming and went the extra mile to make me feel comfortable.', rating: 5 },
+  { name: 'Aarna Kapadia', text: 'Really great experience, everyone was super friendly, and the care was amazing!!', rating: 5 },
+  { name: 'Nandika Bas', text: 'I had a really great experience at this rehabilitation clinic. Everything was so easy to navigate, from booking appointments to communicating with the staff. Everyone was always friendly, helpful, and welcoming!', rating: 5 }
 ];
 
 export default function TestimonialsTicker() {
