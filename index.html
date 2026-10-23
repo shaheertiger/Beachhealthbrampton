@@ -14,6 +14,45 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18423073306');
+
+      // Event snippet for Book appointment (1) conversion
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18423073306/QKmMCObpkKcdEJqU59BE',
+            'value': 1.0,
+            'currency': 'CAD',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      // Automatically record conversion when patient clicks JaneApp booking link or calls clinic
+      document.addEventListener('click', function(e) {
+        var a = e.target && e.target.closest('a');
+        if (a && a.href) {
+          if (a.href.indexOf('janeapp.com') !== -1 || a.href.indexOf('tel:') !== -1) {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18423073306/QKmMCObpkKcdEJqU59BE',
+              'value': 1.0,
+              'currency': 'CAD'
+            });
+          }
+        }
+      }, true);
+
+      // Automatically record conversion when patient submits contact form
+      document.addEventListener('submit', function(e) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18423073306/QKmMCObpkKcdEJqU59BE',
+          'value': 1.0,
+          'currency': 'CAD'
+        });
+      }, true);
     </script>
     <!--route-head: replaced per page at build time by scripts/prerender.mjs-->
     <title>Beachealth Brampton | Pain, Mobility, and Beyond</title>
