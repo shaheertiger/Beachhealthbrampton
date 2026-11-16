@@ -19,11 +19,11 @@ const staticPages: Record<string, { title: string; description: string }> = {
   },
   '/therapies': {
     title: 'Physiotherapy & Chiropractic Services | Beachealth Brampton',
-    description: 'Physiotherapy, chiropractic care, pain management, custom orthotics and shockwave therapy at Beachealth Brampton, 155 Clark Blvd, Unit 7A, Brampton, ON.',
+    description: 'Physiotherapy, chiropractic care, custom braces, compression stockings, custom orthotics and shockwave therapy at Beachealth Brampton, 155 Clark Blvd, Unit 7A, Brampton, ON.',
   },
   '/about': {
     title: 'Our Team | Beachealth Brampton',
-    description: 'Meet the physiotherapists and chiropractor at Beachealth Brampton: Shreya Parekh, Akanksha Bhadane and Dr. Guramritpal (GP) Aujla.',
+    description: 'Meet the physiotherapists and chiropractor at Beachealth Brampton: Shreya Parekh, Akanksha Bhadane, Jaypreet Sahota and Dr. Guramritpal (GP) Aujla.',
   },
   '/blog': {
     title: 'Health & Wellness Blog | Beachealth Brampton',

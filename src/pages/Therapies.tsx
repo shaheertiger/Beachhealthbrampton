@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Activity, Footprints, Zap, HeartPulse } from 'lucide-react';
+import { Activity, Footprints, Zap, HeartPulse, ShieldCheck, Waves } from 'lucide-react';
 
 const services = [
   { 
@@ -13,9 +13,9 @@ const services = [
     Icon: HeartPulse,
   },
   { 
-    title: 'Pain Management', 
-    desc: 'Take control of pain with our expert pain management solutions.',
-    Icon: Activity,
+    title: 'Custom Braces', 
+    desc: 'Custom-fitted joint and ligament braces designed to stabilize, protect, and restore confidence in your movement.',
+    Icon: ShieldCheck,
   },
   { 
     title: 'Custom Orthotics', 
@@ -26,6 +26,11 @@ const services = [
     title: 'Shockwave Therapy', 
     desc: 'Advanced non-invasive shockwave therapy to accelerate the healing of chronic pain and stubborn soft tissue injuries.',
     Icon: Zap,
+  },
+  { 
+    title: 'Compression Stockings', 
+    desc: 'Medical-grade compression stockings to improve circulation, reduce swelling, and relieve tired, aching legs.',
+    Icon: Waves,
   },
 ];
 
