@@ -40,4 +40,14 @@ Outside of work, Akanksha enjoys spending quality time with her family and liste
 
 When he is not in the clinic treating patients, Dr. Aujla can usually be found on the basketball court, in the gym, at the beach, or spending time with friends and family. He looks up to his father, as well as role models like Chris Bumstead and the late Kobe Bryant, whose drive and commitment to excellence inspire him to bring the same energy and dedication to every patient he sees.` 
   },
+  { 
+    name: 'Jaypreet Sahota', 
+    role: 'Physiotherapist', 
+    image: '/jaypreet-sahota.jpg', 
+    bio: `Jaypreet has spent over 8 years helping people recover from injuries, manage chronic pain, and get back to the things that matter most to them, whether that's playing with their kids, returning to the field, or simply moving through a workday without discomfort.
+
+She takes time to understand not just your injury, but your life - your goals, your schedule, and what is making recovery harder than it needs to be. From there, she build a plan that's realistic, evidence-based, and built around you.
+
+She offers one-on-one sessions, so every appointment focuses entirely on your progress.` 
+  },
 ];

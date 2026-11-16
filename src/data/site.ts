@@ -3,6 +3,11 @@
 
 export const SITE_URL = 'https://www.beachealthbrampton.com';
 
+// Elfsight Google Reviews Widget ID (configure with your Elfsight widget ID or via VITE_ELFSIGHT_WIDGET_ID env)
+export const ELFSIGHT_GOOGLE_REVIEWS_WIDGET_ID =
+  (import.meta as unknown as { env?: Record<string, string> }).env?.VITE_ELFSIGHT_WIDGET_ID ||
+  '090d8f42-eb7b-4fa0-904b-cfd9dc7735d8';
+
 export const brand = {
   name: 'Beachealth',
   alternateNames: ['Beach Health'],
