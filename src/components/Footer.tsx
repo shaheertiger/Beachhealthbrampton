@@ -43,6 +43,8 @@ export default function Footer() {
           <div className="mb-2">
             <p className="font-bold text-brand-obsidian text-sm uppercase">Brampton Clinic</p>
             <p className="text-slate-500 text-xs mt-1">Unit 7A, 155 Clark Blvd,<br />Brampton, ON L6T 4G6</p>
+            <p className="text-slate-500 text-xs mt-1">P: (437) 524-5161</p>
+            <p className="text-slate-500 text-xs">F: (437) 524-5561</p>
           </div>
 
           <div>

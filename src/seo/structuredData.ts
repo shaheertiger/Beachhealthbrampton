@@ -54,6 +54,7 @@ const clinic = (location: ClinicLocation): JsonLd => ({
   description: location.summary,
   url: location.website,
   telephone: formatTelephone(location.phone),
+  ...(location.fax ? { faxNumber: formatTelephone(location.fax) } : {}),
   address: {
     '@type': 'PostalAddress',
     streetAddress: location.streetAddress,

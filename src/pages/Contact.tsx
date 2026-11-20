@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Printer } from 'lucide-react';
 import { toronto, formatAddress, telHref } from '../data/site';
 
 export default function Contact() {
@@ -32,11 +32,19 @@ export default function Contact() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="flex flex-col gap-6"
         >
-          {/* Phone Card */}
+          {/* Phone & Fax Card */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
-              <h3 className="text-xl font-bold text-brand-obsidian mb-2">Request Appointment</h3>
-              <p className="text-slate-600 text-lg">(437) 524-5161</p>
+              <h3 className="text-xl font-bold text-brand-obsidian mb-2">Call or Fax</h3>
+              <p className="text-slate-600 text-lg">
+                <a href="tel:+14375245161" className="hover:text-brand-green transition-colors font-semibold">
+                  (437) 524-5161
+                </a>
+              </p>
+              <p className="text-slate-500 text-sm mt-1 flex items-center gap-1.5">
+                <Printer size={15} className="text-brand-green shrink-0" />
+                <span className="font-semibold text-brand-obsidian">Fax:</span> (437) 524-5561
+              </p>
             </div>
             <div className="w-16 h-16 rounded-2xl bg-brand-green text-white flex items-center justify-center flex-shrink-0">
               <Phone size={28} />

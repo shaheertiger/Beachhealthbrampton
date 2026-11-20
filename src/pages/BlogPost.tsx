@@ -153,6 +153,9 @@ export default function BlogPost() {
                   <a href={telHref(location.phone)} className="inline-block text-brand-green font-semibold mt-1 hover:underline">
                     {location.phone}
                   </a>
+                  {location.fax && (
+                    <span className="block text-xs text-slate-400 mt-0.5">Fax: {location.fax}</span>
+                  )}
                 </div>
               ))}
             </div>

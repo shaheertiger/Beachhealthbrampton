@@ -25,6 +25,7 @@ export interface ClinicLocation {
   streetAddress: string;
   postalCode: string;
   phone: string;
+  fax?: string;
   website: string;
   bookingUrl: string;
   mapUrl: string;
@@ -42,6 +43,7 @@ export const brampton: ClinicLocation = {
   streetAddress: '155 Clark Blvd, Unit 7A',
   postalCode: 'L6T 4G6',
   phone: '(437) 524-5161',
+  fax: '(437) 524-5561',
   website: `${SITE_URL}/`,
   bookingUrl: 'https://beachealthbr.janeapp.com/',
   mapUrl: 'https://www.google.com/maps/search/?api=1&query=Beachealth+Brampton+155+Clark+Blvd+Unit+7A+Brampton+ON+L6T+4G6',

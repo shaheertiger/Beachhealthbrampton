@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Printer } from 'lucide-react';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 export default function TopBar() {
@@ -7,7 +7,7 @@ export default function TopBar() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-2 md:gap-4 text-center md:text-left">
         
         {/* Contact Info */}
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-8 gap-y-2">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2">
           <div className="flex items-center gap-2 hover:text-brand-green transition-colors cursor-pointer">
             <MapPin size={16} className="text-brand-green" />
             <span>Unit 7A, 155 Clark Blvd, Brampton, ON L6T 4G6</span>
@@ -17,6 +17,11 @@ export default function TopBar() {
             <Phone size={16} className="text-brand-green" />
             <span>(437) 524-5161</span>
           </a>
+          <span className="hidden md:inline text-slate-300">|</span>
+          <div className="flex items-center gap-1.5 text-slate-600">
+            <Printer size={15} className="text-brand-green" />
+            <span>Fax: (437) 524-5561</span>
+          </div>
           <span className="hidden md:inline text-slate-300">|</span>
           <a href="mailto:info@beachealth.com" className="flex items-center gap-1.5 hover:text-brand-green transition-colors">
             <Mail size={14} className="text-brand-green" />

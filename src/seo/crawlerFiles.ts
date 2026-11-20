@@ -30,7 +30,7 @@ const keyFacts = [
   'Key facts:',
   `- ${brand.name} has two clinics: ${brampton.name} in Brampton and ${toronto.name} in Toronto.`,
   ...locations.flatMap((location) => [
-    `- ${location.name}: ${formatAddress(location)} (${location.area}). Phone ${location.phone}. Website ${location.website}. Book online at ${location.bookingUrl}.`,
+    `- ${location.name}: ${formatAddress(location)} (${location.area}). Phone ${location.phone}${location.fax ? `, Fax ${location.fax}` : ''}. Website ${location.website}. Book online at ${location.bookingUrl}.`,
     `- ${location.name} services: ${location.services.join(', ')}.`,
     ...(location.highlights.length ? [`- ${location.name}: ${location.highlights.join('; ')}.`] : []),
   ]),
@@ -93,6 +93,7 @@ export function buildLlmsFullTxt() {
       [
         `- Address: ${formatAddress(location)} (${location.area})`,
         `- Phone: ${location.phone}`,
+        ...(location.fax ? [`- Fax: ${location.fax}`] : []),
         `- Website: ${location.website}`,
         `- Book online: ${location.bookingUrl}`,
         `- Map: ${location.mapUrl}`,

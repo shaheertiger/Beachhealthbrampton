@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Globe } from 'lucide-react';
+import { MapPin, Phone, Globe, Printer } from 'lucide-react';
 import { SITE_URL, brand, locations, formatAddress, telHref } from '../data/site';
 
 export default function Locations() {
@@ -50,6 +50,12 @@ export default function Locations() {
                     <Phone size={20} className="text-brand-green shrink-0" />
                     <span>{location.phone}</span>
                   </a>
+                  {location.fax && (
+                    <div className="flex items-center gap-3">
+                      <Printer size={20} className="text-brand-green shrink-0" />
+                      <span>Fax: {location.fax}</span>
+                    </div>
+                  )}
                   <a
                     href={location.website}
                     {...(isExternalSite ? { target: '_blank', rel: 'noreferrer' } : {})}
