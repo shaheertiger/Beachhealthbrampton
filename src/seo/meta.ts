@@ -23,7 +23,7 @@ const staticPages: Record<string, { title: string; description: string }> = {
   },
   '/about': {
     title: 'Our Team | Beachealth Brampton',
-    description: 'Meet the physiotherapists and chiropractor at Beachealth Brampton: Shreya Parekh, Akanksha Bhadane, Jaypreet Sahota and Dr. Guramritpal (GP) Aujla.',
+    description: 'Meet the physiotherapists and chiropractor at Beachealth Brampton: Shreya Parekh, Jaypreet Sahota and Dr. Guramritpal (GP) Aujla.',
   },
   '/blog': {
     title: 'Health & Wellness Blog | Beachealth Brampton',

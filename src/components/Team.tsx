@@ -42,7 +42,7 @@ export default function Team() {
 
   return (
     <section className="py-16 px-4 bg-bg-base border-t border-zinc-200">
-      <div className="w-full max-w-6xl mx-auto">
+      <div className="w-full max-w-5xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -53,7 +53,7 @@ export default function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
